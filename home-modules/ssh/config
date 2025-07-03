@@ -1,0 +1,8 @@
+User root
+ServerAliveInterval 20
+ControlMaster auto
+ControlPersist 3600
+ControlPath /run/user/%i/ssh-socket-%r@%h:%p
+
+Host github.com
+  User git
