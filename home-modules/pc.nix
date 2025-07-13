@@ -14,6 +14,7 @@
       easyeffects
       prismlauncher
       libreoffice-qt6-fresh
+      vlc
     ];
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;
