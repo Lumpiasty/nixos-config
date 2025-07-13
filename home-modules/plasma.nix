@@ -2,11 +2,19 @@
 
 {
   config = lib.mkIf osConfig.lumpiasty.enablePlasma {
+
+    home.packages = with pkgs; [
+      posy-cursors
+    ];
+
     programs.plasma = {
       enable = true;
       workspace = {
         # wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/Patak/contents/images/1080x1920.png";
-
+        cursor = {
+          theme = "Posy_Cursor";
+          size = 32;
+        };
       };
       panels = [
         {

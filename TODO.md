@@ -9,8 +9,8 @@
         - minimalny rozmiar discord - lepiej zmienić ustawienie vesktopa
     - [*] nie wyłączaj głądzika przy pisaniu
     - [*] prędkość przewijania na gładziku
-    - domyślne programy
-    - wskaźnik myszy
+    - domyślne programy - rozpisać jakie
+    - [*] wskaźnik myszy
     - menedżer plików
         - rozwinięty terminal
         - ukryte pliki
