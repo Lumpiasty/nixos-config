@@ -11,6 +11,10 @@
     - prędkość przewijania na gładziku
     - domyślne programy
     - wskaźnik myszy
+    - menedżer plików
+        - rozwinięty terminal
+        - ukryte pliki
+    - tryb nocny włączyć
 2. https://github.com/gmodena/nix-flatpak
 3. https://github.com/NixOS/nixos-hardware
     - dla acera
@@ -42,9 +46,11 @@
         - autokopiowanie
         - minimalizowanie do paska stanu przy zamknięciu
         - autostart zminimalizowany
+        - ukryte hasła
 15. system76-scheduler + kde integracja
 16. Rozpisać przywracanie danych, gdzie są najważniejsze dane
     - przeglądarka
+    - gpg, jak doprowadzić do działania
     - hasła
     - discord
     - spotify
@@ -56,3 +62,6 @@
 17. Vscodium
     - Auto Detect Color Scheme
     - dodatki
+18. nixpack sandboxing
+19. Procedura instalacji systemu, od sklonowania repo
+20. qtpass czasami crashuje https://github.com/IJHack/QtPass/issues/663
