@@ -11,6 +11,7 @@
     system/shell.nix
     system/users.nix
     system/ssh.nix
+    system/gaming.nix
 
     desktop/plasma.nix
     desktop/pulseaudio.nix
