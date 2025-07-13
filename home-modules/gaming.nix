@@ -7,6 +7,9 @@
     programs.lutris = {
       enable = true;
       steamPackage = pkgs.steam;
+      extraPackages = with pkgs; [
+        mangohud
+      ];
     };
   };
 }
