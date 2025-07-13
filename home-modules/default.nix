@@ -5,5 +5,6 @@
     ./gpg.nix
     ./pc.nix
     ./dev.nix
+    ./gaming.nix
   ];
 }

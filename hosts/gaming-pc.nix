@@ -63,6 +63,7 @@
     enablePulseaudio = true;
     sshd = true;
     users.user = true;
+    gaming = true;
     # users.drugi = true;
   };
 
