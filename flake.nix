@@ -20,6 +20,7 @@
           with nixos-hardware.nixosModules; {
             x260 = mkNixosSystem lenovo-thinkpad-x260 hosts/x260.nix;
             acer = mkNixosSystem {} hosts/acer.nix;
+            gaming-pc = mkNixosSystem {} hosts/gaming-pc.nix;
           };
     };
 }
