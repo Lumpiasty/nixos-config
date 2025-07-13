@@ -52,6 +52,13 @@
           fsType = "vfat";
           options = [ "fmask=0077" "dmask=0077" ];
         };
+
+      "/var/games" = 
+        {
+          device = "/dev/disk/by-uuid/d650af28-772a-4b08-a370-4c62ba0dc764"; # Old Gaming Arch partition
+          fsType = "btrfs";
+          options = [ "subvol=/Games" "compress-force=zstd" ];
+        };
     };
 
   # Config modules
