@@ -26,6 +26,7 @@
           extraSettings = ''
             panel.screen = 0;
           '';
+          floating = true;
           widgets = [
             {
               kickoff = {
