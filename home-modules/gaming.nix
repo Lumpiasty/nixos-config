@@ -6,7 +6,9 @@
   config = lib.mkIf config.lumpiastyHome.gaming {
     programs.lutris = {
       enable = true;
-      steamPackage = pkgs.steam;
+      steamPackage = pkgs.steam.override {
+        extraPkgs = pkgs': with pkgs'; [ mangohud ];
+      };
       extraPackages = with pkgs; [
         mangohud
       ];
