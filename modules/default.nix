@@ -14,6 +14,7 @@
     system/gaming.nix
 
     desktop/plasma.nix
+    desktop/touchpad.nix
     desktop/pulseaudio.nix
   ];
 }

@@ -51,6 +51,10 @@
           ];
         }
       ];
+
+      input.touchpads = lib.mkIf (osConfig.lumpiasty.touchPad.enable == true) [
+        osConfig.lumpiasty.touchPad
+      ];
     };
   };
 }

@@ -67,6 +67,17 @@
     sshd = true;
     users.user = true;
     # users.drugi = true;
+    touchPad = {
+      enable = true;
+      name = "PIXA3848:01 093A:3848 Touchpad";
+      vendorId = "2362";
+      productId = "14408";
+      disableWhileTyping = false;
+      scrollFactor = 0.5;
+      naturalScroll = false;
+      pointerSpeed = 0.2;
+      accelerationProfile = "default";
+    };
   };
 
   virtualisation.vmVariant = {

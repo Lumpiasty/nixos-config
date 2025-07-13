@@ -6,9 +6,9 @@
         - [*] ukryć spotify
         - [*] pokazać baterię, wifi, jasność, dźwięk, muzyka
     - reguły okien:
-        - minimalny rozmiar discord
-    - nie wyłączaj głądzika przy pisaniu
-    - prędkość przewijania na gładziku
+        - minimalny rozmiar discord - lepiej zmienić ustawienie vesktopa
+    - [*] nie wyłączaj głądzika przy pisaniu
+    - [*] prędkość przewijania na gładziku
     - domyślne programy
     - wskaźnik myszy
     - menedżer plików
