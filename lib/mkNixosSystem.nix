@@ -1,10 +1,11 @@
-{ self, nixpkgs, home-manager, nix-flatpak, ... }:
+{ self, nixpkgs, home-manager, nix-flatpak, plasma-manager, ... }:
 hardwareConfig: hostConfig:
 
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
   specialArgs = {
-    nix-flatpak = nix-flatpak;
+    inherit nix-flatpak;
+    inherit plasma-manager;
   };
   modules = [
     hardwareConfig

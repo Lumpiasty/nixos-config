@@ -6,5 +6,6 @@
     ./pc.nix
     ./dev.nix
     ./gaming.nix
+    ./plasma.nix
   ];
 }

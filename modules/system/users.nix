@@ -1,9 +1,13 @@
-{ config, lib, pkgs, modulesPath, nix-flatpak, ... }:
+{ config, lib, pkgs, modulesPath, nix-flatpak, plasma-manager, ... }:
 
 let
   cfg = config.lumpiasty.users;
-  mkHome = import ../../lib/mkHome.nix { lib = lib; nix-flatpak = nix-flatpak; };
-  mkUser = import ../../lib/mkUser.nix { lib = lib; };
+  mkHome = import ../../lib/mkHome.nix {
+    inherit lib;
+    inherit nix-flatpak;
+    inherit plasma-manager;
+  };
+  mkUser = import ../../lib/mkUser.nix { inherit lib; };
 in
 {
   options.lumpiasty.users = {

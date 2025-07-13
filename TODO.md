@@ -1,10 +1,10 @@
 1. [*] Pozbyć się conditional importów
 1. https://github.com/nix-community/plasma-manager
-    - pasek zadań
-        - zmienić na ikonowo-tekstowy
-    - Ikonki na pasku zadań, które mają być ukryte, pokazane
-        - ukryć spotify
-        - pokazać baterię, wifi, jasność, dźwięk, muzyka
+    - [*] pasek zadań
+        - [*] zmienić na ikonowo-tekstowy
+    - [*] Ikonki na pasku zadań, które mają być ukryte, pokazane
+        - [*] ukryć spotify
+        - [*] pokazać baterię, wifi, jasność, dźwięk, muzyka
     - reguły okien:
         - minimalny rozmiar discord
     - nie wyłączaj głądzika przy pisaniu
@@ -15,6 +15,8 @@
         - rozwinięty terminal
         - ukryte pliki
     - tryb nocny włączyć
+    - zarządzanie zasilaniem
+        - wyłączyć usypianie na pc
 2. https://github.com/gmodena/nix-flatpak
 3. https://github.com/NixOS/nixos-hardware
     - dla acera
