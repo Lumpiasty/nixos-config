@@ -8,13 +8,30 @@
       vesktop
       spotify
       pass
-      qtpass
       teamspeak_client
       teamspeak6-client
       easyeffects
       prismlauncher
       libreoffice-qt6-fresh
       vlc
+      # Working aroung bug of qtpass
+      # https://github.com/IJHack/QtPass/issues/663
+      (
+        # https://nixos.wiki/wiki/Nix_Cookbook#Wrapping_packages
+        runCommand "qtpass" {
+          buildInputs = [ makeWrapper ];
+        } ''
+          mkdir $out
+          # Link every top-level folder from pkgs.hello to our new target
+          ln -s ${qtpass}/* $out
+          # Except the bin folder
+          rm $out/bin
+          mkdir $out/bin
+          # creating a wrapper
+          makeWrapper ${qtpass}/bin/qtpass $out/bin/qtpass \
+            --set QT_QPA_PLATFORM xcb
+        ''
+      )
     ];
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;
