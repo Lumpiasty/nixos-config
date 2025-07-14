@@ -73,7 +73,7 @@
       vendorId = "2362";
       productId = "14408";
       disableWhileTyping = false;
-      scrollFactor = 0.5;
+      scrollSpeed = 0.5;
       naturalScroll = false;
       pointerSpeed = 0.2;
       accelerationProfile = "default";

@@ -4,16 +4,16 @@
 
 let
   scrollMethods = {
-    twoFingers = 1;
-    touchPadEdges = 2;
+    twoFingers = "twoFingers";
+    touchPadEdges = "touchPadEdges";
   };
   rightClickMethods = {
-    bottomRight = 1;
-    twoFingers = 2;
+    bottomRight = "bottomRight";
+    twoFingers = "twoFingers";
   };
   accelerationProfiles = {
-    none = 1;
-    default = 2;
+    none = "none";
+    default = "default";
   };
 in
 {
