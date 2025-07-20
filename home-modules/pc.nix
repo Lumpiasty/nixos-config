@@ -14,6 +14,7 @@
       prismlauncher
       libreoffice-qt6-fresh
       vlc
+      inkscape
       # Working aroung bug of qtpass
       # https://github.com/IJHack/QtPass/issues/663
       (
