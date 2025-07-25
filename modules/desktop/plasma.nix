@@ -26,6 +26,7 @@
     # Network
     networking.useDHCP = lib.mkDefault false;
     networking.networkmanager.enable = lib.mkDefault true;
+    networking.networkmanager.plugins = with pkgs; [ networkmanager-openvpn ];
 
     # Enable touchpad support (enabled default in most desktopManager).
     # services.xserver.libinput.enable = true;
