@@ -12,6 +12,7 @@
     system/users.nix
     system/ssh.nix
     system/gaming.nix
+    system/nix.nix
 
     desktop/plasma.nix
     desktop/touchpad.nix
