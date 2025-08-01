@@ -1,6 +1,6 @@
 { lib, pkgs, ... }:
 
-{
+rec {
   # Identity
   networking.hostName = "acer"; # Define your hostname.
   networking.hostId = "fc9583ce";
@@ -89,6 +89,15 @@
   
   # For dev vm stuff
   networking.firewall.trustedInterfaces = [ "br0" ];
+
+  # Battery driver
+  boot.extraModulePackages = [
+    # Super ugly hack, for some reason it's not included in pkgs.linuxKernel.packages.linux_6_12
+    # Despite being in overlays, something's not working
+    (pkgs.linuxPackages.acer-wmi-battery.override {
+      kernel = boot.kernelPackages.kernel;
+    })
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

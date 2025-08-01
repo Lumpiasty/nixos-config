@@ -11,4 +11,7 @@ self: super:
   #     version = "6.3.1";
   #   });
   # });
+  linuxPackages = super.linuxPackages.extend (lpself: lpsuper: {
+    acer-wmi-battery = lpsuper.callPackage ../pkgs/acer-wmi-battery {};
+  });
 }
