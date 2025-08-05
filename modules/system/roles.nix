@@ -2,4 +2,5 @@
 
 {
   options.lumpiasty.pc = lib.mkEnableOption "Enable options specific to personal computers";
+  options.lumpiasty.laptop = lib.mkEnableOption "Enable options specific to laptops";
 }

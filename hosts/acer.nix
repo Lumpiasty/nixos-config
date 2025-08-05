@@ -78,6 +78,7 @@ rec {
       pointerSpeed = 0.2;
       accelerationProfile = "default";
     };
+    laptop = true;
   };
 
   virtualisation.vmVariant = {

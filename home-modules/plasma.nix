@@ -51,6 +51,7 @@
                     "org.kde.plasma.brightness"
                     "org.kde.plasma.volume"
                     "plasmashell_microphone"
+                    (lib.mkIf (osConfig.lumpiasty.laptop == true) "org.kde.plasma.battery")
                   ];
                 };
               };
