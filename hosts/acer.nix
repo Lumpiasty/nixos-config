@@ -79,6 +79,7 @@ rec {
       accelerationProfile = "default";
     };
     laptop = true;
+    gaming = true;
   };
 
   virtualisation.vmVariant = {
