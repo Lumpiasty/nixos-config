@@ -9,7 +9,6 @@
       spotify
       pass
       teamspeak_client
-      teamspeak6-client
       easyeffects
       prismlauncher
       libreoffice-qt6-fresh
