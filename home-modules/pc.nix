@@ -7,7 +7,7 @@
     home.packages = with pkgs; [
       vesktop
       spotify
-      pass
+      pass-wayland
       teamspeak_client
       easyeffects
       prismlauncher
