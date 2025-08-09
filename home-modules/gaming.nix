@@ -7,10 +7,11 @@
     programs.lutris = {
       enable = true;
       steamPackage = pkgs.steam.override {
-        extraPkgs = pkgs': with pkgs'; [ mangohud ];
+        extraPkgs = pkgs': with pkgs'; [ mangohud gamescope ];
       };
       extraPackages = with pkgs; [
         mangohud
+        gamescope
       ];
     };
   };
