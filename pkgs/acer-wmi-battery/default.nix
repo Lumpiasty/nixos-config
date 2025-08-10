@@ -19,24 +19,26 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ kernel.moduleBuildDependencies ];
 
-  makeFlags = kernel.makeFlags ++ [
-    "INSTALL_MOD_PATH=$(out)"
+  # Makefile provided in repo is useless, hardcoded paths, not using it
+
+  setSourceRoot = ''
+    export sourceRoot=$(pwd)/source
+  '';
+
+  makeFlags = [
+    "-C"
+    "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
+    "M=$(sourceRoot)"
   ];
 
-  # Makefile provided in repo is useless, hardcoded paths, overwriting it
   patchPhase = ''
-    cat > Makefile <<EOF
-    obj-m += acer-wmi-battery.o
-
-    all:
-    $(printf '\t')make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build M=\$(PWD) modules
-
-    modules_install:
-    $(printf '\t')make -C ${kernel.dev}/lib/modules/${kernel.modDirVersion}/build M=\$(PWD) modules_install
+    cat > Kbuild <<EOF
+    obj-m := acer-wmi-battery.o
     EOF
   '';
 
-  buildFlags = [ "all" ];
+  buildFlags = [ "modules" ];
+  installFlags = [ "INSTALL_MOD_PATH=${placeholder "out"}" ];
   installTargets = [ "modules_install" ];
 
   meta = {

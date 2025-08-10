@@ -17,7 +17,7 @@ rec {
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_15;
 
   # Swap
   zramSwap = {
@@ -96,11 +96,11 @@ rec {
   boot.extraModulePackages = [
     # Super ugly hack, for some reason it's not included in pkgs.linuxKernel.packages.linux_6_12
     # Despite being in overlays, something's not working
-    (pkgs.linuxPackages.acer-wmi-battery.override {
+    (pkgs.linuxPackages.acer-wmi-ext.override {
       kernel = boot.kernelPackages.kernel;
     })
   ];
-  boot.kernelModules = [ "acer-wmi-battery" ];
+  boot.kernelModules = [ "acer-wmi-ext" ];
     
 
   # This value determines the NixOS release from which the default
