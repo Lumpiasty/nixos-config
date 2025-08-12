@@ -10,5 +10,11 @@
     };
     services.pulseaudio.support32Bit = config.services.pulseaudio.enable;
     services.pipewire.alsa.support32Bit = config.services.pipewire.alsa.enable;
+    programs.gamemode.enable = true;
+    users.users = {
+      user = lib.mkIf config.lumpiasty.users.user {
+        extraGroups = ["gamemode"];
+      };
+    };
   };
 }
