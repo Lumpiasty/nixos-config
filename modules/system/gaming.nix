@@ -10,7 +10,21 @@
     };
     services.pulseaudio.support32Bit = config.services.pulseaudio.enable;
     services.pipewire.alsa.support32Bit = config.services.pipewire.alsa.enable;
-    programs.gamemode.enable = true;
+    programs.gamemode = {
+      enable = true;
+      settings = {
+        custom = {
+          start = toString (pkgs.writeScript "gamemode-start" ''
+            ${pkgs.libnotify}/bin/notify-send -a 'GameMode' 'GameMode started'
+            ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set performance
+          '');
+          end = toString (pkgs.writeScript "gamemode-end" ''
+            ${pkgs.libnotify}/bin/notify-send -a 'GameMode' 'GameMode ended'
+            ${pkgs.power-profiles-daemon}/bin/powerprofilesctl set balanced
+          '');
+        };
+      };
+    };
     users.users = {
       user = lib.mkIf config.lumpiasty.users.user {
         extraGroups = ["gamemode"];
