@@ -31,6 +31,7 @@
             --set QT_QPA_PLATFORM xcb
         ''
       )
+      signal-desktop
     ];
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;
