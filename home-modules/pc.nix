@@ -10,7 +10,6 @@
       pass-wayland
       teamspeak_client
       easyeffects
-      prismlauncher
       libreoffice-qt6-fresh
       vlc
       inkscape

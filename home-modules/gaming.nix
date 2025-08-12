@@ -14,5 +14,12 @@
         gamescope
       ];
     };
+    home.packages = with pkgs; [
+      (prismlauncher.overrideAttrs (final: prev: {
+        qtWrapperArgs = prev.qtWrapperArgs ++ [
+          "--prefix XDG_DATA_DIRS : ${mangohud}/share"
+        ];
+      }))
+    ];
   };
 }
