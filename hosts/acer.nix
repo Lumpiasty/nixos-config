@@ -62,6 +62,7 @@ rec {
     pc = true;
     enablePlasma = true;
     intelCpu = false;
+    amdCpu = true;
     noMitigations = false;
     enablePulseaudio = true;
     sshd = true;

@@ -3,6 +3,7 @@
 {
   imports = [
     hardware/intel-cpu.nix
+    hardware/amd-cpu.nix
     hardware/no-mitigations.nix
 
     system/roles.nix
