@@ -43,6 +43,7 @@
       docker
       docker-buildx
       protonvpn-gui
+      wl-clipboard
     ];
 
     # SSH config
