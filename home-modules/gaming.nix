@@ -6,9 +6,6 @@
   config = lib.mkIf config.lumpiastyHome.gaming {
     programs.lutris = {
       enable = true;
-      steamPackage = pkgs.steam.override {
-        extraPkgs = pkgs': with pkgs'; [ mangohud gamescope ];
-      };
       extraPackages = with pkgs; [
         mangohud
         gamescope
@@ -20,6 +17,9 @@
           "--prefix XDG_DATA_DIRS : ${mangohud}/share"
         ];
       }))
+      (steam.override {
+        extraPkgs = pkgs': with pkgs'; [ mangohud gamescope ];
+      })
     ];
   };
 }
