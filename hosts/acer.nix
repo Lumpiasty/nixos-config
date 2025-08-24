@@ -15,6 +15,12 @@ rec {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  # Limiting number of generations to prevent ESP from filling
+  # Using Windows' preinstalled ESP which is only 256MB
+  boot.loader.systemd-boot.configurationLimit = 5;
+  boot.initrd.compressor = "zstd";
+  boot.initrd.compressorArgs = [ "-19" "-T16" ];
+
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
   boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_15;
