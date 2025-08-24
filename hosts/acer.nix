@@ -108,7 +108,8 @@ rec {
     })
   ];
   boot.kernelModules = [ "acer-wmi-ext" ];
-    
+
+  boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
