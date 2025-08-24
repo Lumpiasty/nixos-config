@@ -109,6 +109,9 @@ rec {
   ];
   boot.kernelModules = [ "acer-wmi-ext" ];
 
+  # Breaks sleep, not enabling for now
+  # lumpiasty.acerUndervolt = true;
+
   boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
   # This value determines the NixOS release from which the default

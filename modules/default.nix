@@ -5,6 +5,7 @@
     hardware/intel-cpu.nix
     hardware/amd-cpu.nix
     hardware/no-mitigations.nix
+    hardware/acer-undervolt.nix
 
     system/roles.nix
     system/nixpkgs.nix
