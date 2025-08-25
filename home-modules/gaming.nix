@@ -7,19 +7,16 @@ let
     show_fps_limit
   '';
 
-  mangohudWrapped = (pkgs.runCommand
-    "mangohud"
-    { nativeBuildInputs = [ pkgs.makeWrapper ]; }
-    "makeWrapper ${pkgs.mangohud}/bin/mangohud $out/bin/mangohud --set MANGOHUD_CONFIGFILE ${mangohudConfig}"
-  );
 in {
   options.lumpiastyHome.gaming = lib.mkEnableOption "Gaming account";
 
   config = lib.mkIf config.lumpiastyHome.gaming {
+    xdg.configFile."MangoHud/MangoHud.conf".source = mangohudConfig;
+
     programs.lutris = {
       enable = true;
       extraPackages = with pkgs; [
-        mangohudWrapped
+        mangohud
         gamescope
       ];
     };
@@ -30,7 +27,7 @@ in {
         ];
       }))
       (steam.override {
-        extraPkgs = pkgs': with pkgs'; [ mangohudWrapped gamescope ];
+        extraPkgs = pkgs': with pkgs'; [ mangohud gamescope ];
       })
     ];
   };
