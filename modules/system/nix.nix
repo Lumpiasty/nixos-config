@@ -4,5 +4,6 @@
   nix = {
     daemonIOSchedClass = "idle";
     daemonCPUSchedPolicy = "idle";
+    settings.trusted-users = [ "root" "user" ];
   };
 }
