@@ -37,6 +37,8 @@
       protonvpn-gui
       wl-clipboard
       devenv
+      dig
+      nodejs_24
     ];
 
     # SSH config
