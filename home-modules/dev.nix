@@ -39,6 +39,7 @@
       devenv
       dig
       nodejs_24
+      codex
     ];
 
     # SSH config
