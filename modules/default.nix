@@ -19,5 +19,6 @@
     desktop/plasma.nix
     desktop/touchpad.nix
     desktop/pulseaudio.nix
+    desktop/tailscale.nix
   ];
 }

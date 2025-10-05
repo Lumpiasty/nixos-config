@@ -87,6 +87,7 @@ rec {
     };
     laptop = true;
     gaming = true;
+    enableTailscale = true;
   };
 
   virtualisation.vmVariant = {
