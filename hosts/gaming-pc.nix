@@ -33,7 +33,7 @@
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_12;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
 
   # Swap
   zramSwap = {
@@ -98,6 +98,18 @@
       cores = 2;
     };
   };
+
+  nix.settings.system-features = [ "gccarch-haswell" ];
+
+  # nixpkgs.hostPlatform = {
+  #   system = "x86_64-linux";
+  #   gcc.arch = "haswell";
+  #   gcc.tune = "haswell";
+  # };
+
+  # nixpkgs.overrides = [(self: super: {
+  #   assimp
+  # })];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
