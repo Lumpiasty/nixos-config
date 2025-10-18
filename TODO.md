@@ -17,6 +17,9 @@
     - tryb nocny włączyć
     - zarządzanie zasilaniem
         - wyłączyć usypianie na pc
+    - rozpoczynanie posiedzenia pustym pulpitem, nie przywracanie poprzednich aplikacji
+    - nie włączaj automatycznie trybu nie przeszkadzać w pełnym ekranie
+    - default browser librewolf
 2. https://github.com/gmodena/nix-flatpak
 3. https://github.com/NixOS/nixos-hardware
     - dla acera
@@ -25,6 +28,10 @@
     - native messaging
     - kde integration
     - dodatki
+        - qr code
+        - libredirect
+        - privacy badger
+        - wayback machine
     - zakładki? synchronizacja?
 7. firewall?
 8. zramswap writeback
@@ -67,3 +74,12 @@
 18. nixpack sandboxing
 19. Procedura instalacji systemu, od sklonowania repo
 20. qtpass czasami crashuje https://github.com/IJHack/QtPass/issues/663
+21. Moduł do signal
+    - minimalizowanie do zasobnika
+22. Command not found
+23. Undervolting acer, limit mocy (jeśli się da)
+24. Spicetify
+25. Theme, catpuccin?
+26. https://redlib.nadeko.net/r/unixporn/comments/1l5ll27/hyprland_i_3_quickshell/
+27. Donut browser, Camoufox
+
