@@ -60,6 +60,7 @@ in {
       (steam.override {
         extraPkgs = pkgs': with pkgs'; [ mangohud gamescope ];
       })
+      bottles
     ];
   };
 }
