@@ -17,7 +17,7 @@ rec {
 
   # Limiting number of generations to prevent ESP from filling
   # Using Windows' preinstalled ESP which is only 256MB
-  boot.loader.systemd-boot.configurationLimit = 5;
+  boot.loader.systemd-boot.configurationLimit = 3;
   boot.initrd.compressor = "zstd";
   boot.initrd.compressorArgs = [ "-19" "-T16" ];
 
