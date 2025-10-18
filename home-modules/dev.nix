@@ -43,11 +43,27 @@
     ];
 
     # SSH config
-    home.file.sshconfig = {
+    programs.ssh = {
       enable = true;
-      executable = false;
-      source = ssh/config;
-      target = ".ssh/config";
+      # evaluation warning: user profile: `programs.ssh` default values will be removed in the future.
+      # Consider setting `programs.ssh.enableDefaultConfig` to false,
+      # and manually set the default values you want to keep at
+      # `programs.ssh.matchBlocks."*"`.
+      enableDefaultConfig = false;
+
+      matchBlocks."*" = {
+        user = "root";
+        controlMaster = "auto";
+        controlPersist = "3600";
+        controlPath = "/run/user/%i/ssh-socket-%r@%h:%p";
+        serverAliveInterval = 20;
+      };
+
+      matchBlocks."github.com".user = "git";
+
+      extraConfig = ''
+        Include config_local
+      '';
     };
   };
 }
