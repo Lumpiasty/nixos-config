@@ -44,6 +44,9 @@
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;
 
+    programs.chromium.enable = true;
+    programs.chromium.package = pkgs.ungoogled-chromium;
+
     services.flatpak.remotes = [{
       name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
     }];
