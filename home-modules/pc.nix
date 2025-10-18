@@ -8,7 +8,6 @@
       vesktop
       spotify
       pass-wayland
-      teamspeak_client
       (teamspeak6-client.overrideAttrs (old: {
         version = "6.0.0-beta3";
         src = pkgs.fetchurl {
