@@ -68,6 +68,8 @@
           night = 3500;
         };
       };
+
+      session.sessionRestore.restoreOpenApplicationsOnLogin = "startWithEmptySession";
     };
   };
 }

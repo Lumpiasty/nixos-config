@@ -17,7 +17,7 @@
     - [*] tryb nocny włączyć
     - zarządzanie zasilaniem
         - wyłączyć usypianie na pc
-    - rozpoczynanie posiedzenia pustym pulpitem, nie przywracanie poprzednich aplikacji
+    - [*] rozpoczynanie posiedzenia pustym pulpitem, nie przywracanie poprzednich aplikacji
     - nie włączaj automatycznie trybu nie przeszkadzać w pełnym ekranie
     - default browser librewolf
 2. https://github.com/gmodena/nix-flatpak
