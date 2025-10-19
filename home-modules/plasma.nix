@@ -55,6 +55,19 @@
       input.touchpads = lib.mkIf (osConfig.lumpiasty.touchPad.enable == true) [
         osConfig.lumpiasty.touchPad
       ];
+
+      kwin.nightLight = {
+        enable = true;
+        mode = "location";
+        location = {
+          latitude = "49.5";
+          longitude = "19.5";
+        };
+        temperature = {
+          day = null;
+          night = 3500;
+        };
+      };
     };
   };
 }

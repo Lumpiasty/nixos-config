@@ -14,7 +14,7 @@
     - menedżer plików
         - rozwinięty terminal
         - ukryte pliki
-    - tryb nocny włączyć
+    - [*] tryb nocny włączyć
     - zarządzanie zasilaniem
         - wyłączyć usypianie na pc
     - rozpoczynanie posiedzenia pustym pulpitem, nie przywracanie poprzednich aplikacji
