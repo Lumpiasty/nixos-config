@@ -7,8 +7,10 @@
     programs.git = {
       enable = true;
       lfs.enable = true;
-      userName = "Lumpiasty";
-      userEmail = "arek.dzski@gmail.com";
+      settings.user = {
+        name = "Lumpiasty";
+        email = "arek.dzski@gmail.com";
+      };
     };
 
     programs.vscode = {
