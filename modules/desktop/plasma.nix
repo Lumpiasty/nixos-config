@@ -33,6 +33,22 @@
 
     # Use wayland in electron apps
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    environment.systemPackages =
+      lib.pipe pkgs.kdePackages.sources [
+        builtins.attrNames
+        (builtins.map (n: pkgs.kdePackages.${n}))
+        (builtins.filter (pkg: !pkg.meta.broken))
+        # Exclude neochat and itinerary due to known vulnerabilities
+        (builtins.filter (pkg: pkg.pname != "neochat"))
+        (builtins.filter (pkg: pkg.pname != "itinerary"))
+        (builtins.filter (pkg: pkg.pname != "libquotient"))
+
+        # Exclude angelfish due to build failure
+        (builtins.filter (pkg: pkg.pname != "angelfish"))
+
+        # Exclude plasma-mobile
+        (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
+      ];
   };
 
 }
