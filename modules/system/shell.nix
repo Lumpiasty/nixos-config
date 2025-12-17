@@ -8,6 +8,8 @@
     wget
     htop
     tree
+    usbutils
+    pciutils
   ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
