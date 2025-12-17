@@ -47,7 +47,9 @@
         - uruchamianie zminimalizowany
         - zamknij aby zminimalizować do paska
         - wyłączyć powiadomienia na pulpicie przy zmianie utworu
-    - easyeffects presety
+    - easyeffects
+        - autostart
+        - presety
     - ts3?
     - qtpass
         - używaj pass zamiast gpg native
@@ -82,4 +84,4 @@
 25. Theme, catpuccin?
 26. https://redlib.nadeko.net/r/unixporn/comments/1l5ll27/hyprland_i_3_quickshell/
 27. Donut browser, Camoufox
-
+28. cups, sane w home-manager
