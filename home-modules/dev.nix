@@ -39,6 +39,7 @@
       protonvpn-gui
       wl-clipboard
       devenv
+      direnv
       dig
       nodejs_24
       codex
