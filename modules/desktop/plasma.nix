@@ -46,6 +46,12 @@
         # Exclude angelfish due to build failure
         (builtins.filter (pkg: pkg.pname != "angelfish"))
 
+        # Exclude step due to build failure
+        (builtins.filter (pkg: pkg.pname != "step"))
+
+        # Exclude plasma-vault due to build failure
+        (builtins.filter (pkg: pkg.pname != "plasma-vault"))
+
         # Exclude plasma-mobile
         (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
       ];
