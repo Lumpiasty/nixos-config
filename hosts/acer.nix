@@ -122,6 +122,29 @@ rec {
   programs.corectrl.enable = true;
   hardware.amdgpu.overdrive.enable = true;
 
+  fonts = {
+    fontconfig = {
+      enable = true;
+
+      # Turn on antialiasing
+      antialias = true;
+
+      # Subpixel rendering tuned for your monitors
+      subpixel = {
+        rgba = "rgb";      # standard RGB stripe
+        lcdfilter = "default";  # or "light" if you want a bit thinner glyphs
+      };
+
+      # Hinting: helps a lot at ~90–95 DPI like your 24–25" monitors
+      hinting = {
+        enable = true;
+        style = "slight";  # try "full" if you want sharper / more “pixel-snapped”
+        autohint = false;
+      };
+    };
+  };
+
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
