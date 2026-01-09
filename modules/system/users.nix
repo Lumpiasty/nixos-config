@@ -17,12 +17,16 @@ in
 
 
   config = {
-    # Docker rootless user service, only if pc
-    # Unfortunately, not implemented in home-manager yet
-    virtualisation.docker.rootless = {
-      enable = config.lumpiasty.pc;
-      setSocketVariable = true;
-    };
+    # Install system-wide docker because rootless causes issues with binfmt
+    virtualisation.docker.enable = config.lumpiasty.pc;
+
+    # Binfmt for aarch64 emulation
+    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+    boot.binfmt.preferStaticEmulators = true;
+    # Pass the binary to the interpreter as an open file descriptor, instead of a path.
+    # Fixes issue inside containers.
+    boot.binfmt.registrations.aarch64-linux.openBinary = true;
+    boot.binfmt.registrations.aarch64-linux.fixBinary = true;
 
     # Flatpak
     services.flatpak.enable = true;
@@ -34,7 +38,12 @@ in
     home-manager.useUserPackages = true;
 
     # User user
-    users.users.user = mkUser cfg.user ../../users/user/config.nix;
+    users.users.user = lib.mkMerge [
+      (mkUser cfg.user ../../users/user/config.nix)
+      {
+        extraGroups = lib.mkIf config.lumpiasty.pc [ "docker" ];
+      }
+    ];
     home-manager.users.user = mkHome cfg.user ../../users/user/home.nix;
 
     # User drugi
