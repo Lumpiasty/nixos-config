@@ -43,6 +43,7 @@
       dig
       nodejs_24
       codex
+      winbox4
     ];
 
     # SSH config
