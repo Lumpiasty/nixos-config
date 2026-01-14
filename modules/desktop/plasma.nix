@@ -52,6 +52,9 @@
         # Exclude plasma-vault due to build failure
         (builtins.filter (pkg: pkg.pname != "plasma-vault"))
 
+        # Exclude kalzium due to build failure
+        (builtins.filter (pkg: pkg.pname != "kalzium"))
+
         # Exclude plasma-mobile
         (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
       ]) ++ [

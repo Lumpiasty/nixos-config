@@ -33,7 +33,7 @@
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
 
   # Swap
   zramSwap = {

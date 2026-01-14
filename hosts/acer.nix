@@ -23,7 +23,7 @@ rec {
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_17;
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
   boot.zfs.package = pkgs.zfs_unstable;
 
   # Swap
@@ -108,6 +108,9 @@ rec {
     (pkgs.linuxPackages.acer-wmi-ext.override {
       kernel = boot.kernelPackages.kernel;
     })
+    # (pkgs.callPackage ../pkgs/ms912x/ms912x.nix { 
+    #   kernel = boot.kernelPackages.kernel; 
+    # })
   ];
   boot.kernelModules = [ "acer-wmi-ext" ];
 
