@@ -116,8 +116,6 @@ rec {
 
   boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
-  boot.kernelParams = [ "pcie_aspm=off" ];
-
 
   programs.corectrl.enable = true;
   hardware.amdgpu.overdrive.enable = true;
