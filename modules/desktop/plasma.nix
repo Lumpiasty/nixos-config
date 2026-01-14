@@ -34,7 +34,7 @@
     # Use wayland in electron apps
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
     environment.systemPackages =
-      lib.pipe pkgs.kdePackages.sources [
+      (lib.pipe pkgs.kdePackages.sources [
         builtins.attrNames
         (builtins.map (n: pkgs.kdePackages.${n}))
         (builtins.filter (pkg: !pkg.meta.broken))
@@ -54,7 +54,22 @@
 
         # Exclude plasma-mobile
         (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
+      ]) ++ [
+        # Printing support in Plasma settings
+        pkgs.system-config-printer
       ];
+
+    services.printing = {
+      enable = true;
+      drivers = [ pkgs.hplip ];
+    };
+
+    hardware.sane = {
+      enable = true;
+      extraBackends = [ pkgs.hplipWithPlugin ];
+    };
+    services.avahi.enable = true;
+
   };
 
 }
