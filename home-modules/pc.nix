@@ -38,7 +38,6 @@
         ''
       )
       signal-desktop
-      ktailctl
     ];
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;

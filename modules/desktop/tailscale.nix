@@ -7,6 +7,8 @@
     services.tailscale = {
       enable = true;
       extraSetFlags = [ "--operator=user" ];
+      useRoutingFeatures = "client";
     };
+    environment.systemPackages = [ pkgs.ktailctl ];
   };
 }
