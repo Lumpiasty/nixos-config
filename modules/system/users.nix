@@ -28,6 +28,24 @@ in
     boot.binfmt.registrations.aarch64-linux.openBinary = true;
     boot.binfmt.registrations.aarch64-linux.fixBinary = true;
 
+    # Libvirt
+    virtualisation.libvirtd = lib.mkIf config.lumpiasty.pc {
+      enable = true;
+      # Enable TPM emulation
+      # install pkgs.swtpm system-wide for use in virt-manager (optional)
+      qemu.swtpm.enable = true;
+    };
+
+    # Enable USB redirection (optional)
+    virtualisation.spiceUSBRedirection.enable = true;
+
+    environment.systemPackages = lib.mkIf config.lumpiasty.pc (with pkgs; [
+      dnsmasq # Needed for libvirt networking
+    ]);
+
+    # GUI for managing virtual machines
+    programs.virt-manager.enable = true;
+
     # Flatpak
     services.flatpak.enable = true;
 
@@ -41,7 +59,7 @@ in
     users.users.user = lib.mkMerge [
       (mkUser cfg.user ../../users/user/config.nix)
       {
-        extraGroups = lib.mkIf config.lumpiasty.pc [ "docker" ];
+        extraGroups = lib.mkIf config.lumpiasty.pc [ "docker" "libvirtd" ];
       }
     ];
     home-manager.users.user = mkHome cfg.user ../../users/user/home.nix;
