@@ -39,6 +39,7 @@
       )
       signal-desktop
       transmission_4-qt6
+      thunderbird
     ];
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;
