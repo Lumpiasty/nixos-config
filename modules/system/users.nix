@@ -46,6 +46,16 @@ in
     # GUI for managing virtual machines
     programs.virt-manager.enable = true;
 
+    services.transmission = {
+      enable = config.lumpiasty.pc;
+      package = pkgs.transmission_4; # For some reason 3.x is still default
+      user = "user";
+      group = "users";
+      settings.download-dir = "/home/user/Downloads";
+      settings.incomplete-dir-enabled = false;
+      openPeerPorts = true;
+    };
+
     # Flatpak
     services.flatpak.enable = true;
 
