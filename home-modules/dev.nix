@@ -43,6 +43,7 @@
       dig
       nodejs_24
       codex
+      opencode
       winbox4
     ];
 
