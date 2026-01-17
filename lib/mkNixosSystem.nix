@@ -1,4 +1,4 @@
-{ self, nixpkgs, home-manager, nix-flatpak, plasma-manager, ... }:
+{ self, nixpkgs, home-manager, nix-flatpak, plasma-manager, lanzaboote, ... }:
 hardwareConfig: hostConfig:
 
 nixpkgs.lib.nixosSystem {
@@ -8,6 +8,7 @@ nixpkgs.lib.nixosSystem {
     inherit plasma-manager;
   };
   modules = [
+    lanzaboote.nixosModules.lanzaboote
     hardwareConfig
     home-manager.nixosModules.home-manager
     ../modules

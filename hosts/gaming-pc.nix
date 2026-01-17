@@ -9,26 +9,46 @@
   hardware.enableRedistributableFirmware = true;
 
   # Bootloader.
-  boot.loader.systemd-boot = {
+  # boot.loader.systemd-boot = {
+  #   enable = true;
+  #   graceful = true;
+  #   windows = {
+  #       "windows" =
+  #         let
+  #           # To determine the name of the windows boot drive, boot into edk2 first, then run
+  #           # `map -c` to get drive aliases, and try out running `FS1:`, then `ls EFI` to check
+  #           # which alias corresponds to which EFI partition.
+  #           boot-drive = "FS0";
+  #         in
+  #         {
+  #           title = "Windows";
+  #           efiDeviceHandle = boot-drive;
+  #           sortKey = "y_windows";
+  #         };
+  #     };
+  #   edk2-uefi-shell.enable = true;
+  #   edk2-uefi-shell.sortKey = "z_edk2";
+  #   # Limiting number of generations to prevent ESP from filling
+  #   configurationLimit = 3;
+  # };
+
+  environment.systemPackages = [
+    # For debugging and troubleshooting Secure Boot.
+    pkgs.sbctl
+  ];
+
+  # Lanzaboote currently replaces the systemd-boot module.
+  # This setting is usually set to true in configuration.nix
+  # generated at installation time. So we force it to false
+  # for now.
+  boot.loader.systemd-boot.enable = lib.mkForce false;
+
+  boot.lanzaboote = {
     enable = true;
-    graceful = true;
-    windows = {
-        "windows" =
-          let
-            # To determine the name of the windows boot drive, boot into edk2 first, then run
-            # `map -c` to get drive aliases, and try out running `FS1:`, then `ls EFI` to check
-            # which alias corresponds to which EFI partition.
-            boot-drive = "FS0";
-          in
-          {
-            title = "Windows";
-            efiDeviceHandle = boot-drive;
-            sortKey = "y_windows";
-          };
-      };
-    edk2-uefi-shell.enable = true;
-    edk2-uefi-shell.sortKey = "z_edk2";
+    pkiBundle = "/var/lib/sbctl";
+    configurationLimit = 3;
   };
+
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Kernel
@@ -66,16 +86,19 @@
         };
 
       "/boot" =
-        { device = "/dev/disk/by-uuid/2C6B-5A17";
+        { device = "/dev/disk/by-uuid/3C56-F3E7";
           fsType = "vfat";
           options = [ "fmask=0077" "dmask=0077" ];
         };
 
       "/var/games" = 
         {
-          device = "/dev/disk/by-uuid/d650af28-772a-4b08-a370-4c62ba0dc764"; # Old Gaming Arch partition
-          fsType = "btrfs";
-          options = [ "subvol=/Games" "compress-force=zstd" ];
+          device = "/dev/disk/by-uuid/8A3094A230949733"; # "Shared" NTFS partition
+          fsType = "ntfs-3g";
+          options = [
+            "uid=1000" "gid=100" # My user account
+            "nofail" # Don't fail boot if failed to mount because windows left it dirty
+          ];
         };
     };
 
