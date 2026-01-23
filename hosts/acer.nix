@@ -119,6 +119,8 @@ rec {
 
   boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
+  # https://community.frame.work/t/attn-critical-bugs-in-amdgpu-driver-included-with-kernel-6-18-x-6-19-x/79221
+  boot.kernelParams = [ "amdgpu.cwsr_enable=0" ];
 
   programs.corectrl.enable = true;
   hardware.amdgpu.overdrive.enable = true;
