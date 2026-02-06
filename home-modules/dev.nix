@@ -43,6 +43,7 @@
       dig
       nodejs_24
       codex
+      claude-code
       opencode
       winbox4
     ];
