@@ -15,6 +15,7 @@
     system/ssh.nix
     system/gaming.nix
     system/nix.nix
+    system/zfs.nix
 
     desktop/plasma.nix
     desktop/touchpad.nix
