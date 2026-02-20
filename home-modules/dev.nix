@@ -39,7 +39,6 @@
       protonvpn-gui
       wl-clipboard
       devenv
-      direnv
       dig
       nodejs_24
       codex
@@ -71,5 +70,7 @@
         Include config_local
       '';
     };
+
+    programs.direnv.enable = true;
   };
 }
