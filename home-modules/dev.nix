@@ -72,5 +72,21 @@
     };
 
     programs.direnv.enable = true;
+
+    # Replace the default bash integration with our own
+    # which can be disabled with the DISABLE_DIRENV environment variable
+    # useful for VSCode's integrated terminal with direnv extension
+    # so we don't apply the direnv hook twice
+    # TODO: configure vscode to set DISABLE_DIRENV in the integrated terminal
+    programs.direnv.enableBashIntegration = false;
+    programs.bash.initExtra = (
+      # Using `mkAfter` to make it more likely to appear after other
+      # manipulations of the prompt.
+      lib.mkAfter ''
+        if [ -z "$DISABLE_DIRENV" ]; then
+          eval "$(${lib.getExe config.programs.direnv.package} hook bash)"
+        fi
+      ''
+    );
   };
 }
