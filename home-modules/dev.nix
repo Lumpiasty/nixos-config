@@ -40,6 +40,8 @@
       wl-clipboard
       devenv
       dig
+      whois
+      mtr
       nodejs_24
       codex
       claude-code
