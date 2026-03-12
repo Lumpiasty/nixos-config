@@ -89,6 +89,7 @@ rec {
     laptop = true;
     gaming = true;
     enableTailscale = true;
+    system76Scheduler = true;
   };
 
   virtualisation.vmVariant = {

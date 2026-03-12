@@ -21,5 +21,6 @@
     desktop/touchpad.nix
     desktop/pulseaudio.nix
     desktop/tailscale.nix
+    desktop/system76-scheduler.nix
   ];
 }
