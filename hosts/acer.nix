@@ -119,8 +119,16 @@ rec {
 
   boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
+  boot.kernelParams = [ 
   # https://community.frame.work/t/attn-critical-bugs-in-amdgpu-driver-included-with-kernel-6-18-x-6-19-x/79221
-  boot.kernelParams = [ "amdgpu.cwsr_enable=0" ];
+    "amdgpu.cwsr_enable=0"
+  
+  # Increase GPU memory limits
+    "ttm.pages_limit=7864320"      # 30GB in pages (30 * 1024 * 1024 * 1024 / 4096)
+    "ttm.page_pool_size=7864320"
+    "amdttm.pages_limit=7864320"   # Include both for compatibility
+    "amdttm.page_pool_size=7864320"
+   ];
 
   programs.corectrl.enable = true;
   hardware.amdgpu.overdrive.enable = true;
