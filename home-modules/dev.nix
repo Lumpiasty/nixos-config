@@ -42,11 +42,13 @@
       dig
       whois
       mtr
+      traceroute
       nodejs_24
       codex
       claude-code
       opencode
       winbox4
+      amdgpu_top
     ];
 
     # SSH config
