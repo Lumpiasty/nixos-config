@@ -5,5 +5,6 @@
     daemonIOSchedClass = "idle";
     daemonCPUSchedPolicy = "idle";
     settings.trusted-users = [ "root" "user" ];
+    gc.automatic = true;
   };
 }
