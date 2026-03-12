@@ -49,6 +49,7 @@
       opencode
       winbox4
       amdgpu_top
+      dua
     ];
 
     # SSH config
