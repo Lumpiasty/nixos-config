@@ -27,10 +27,9 @@ rec {
   boot.zfs.package = pkgs.zfs_unstable;
 
   # Swap
-  zramSwap = {
-    enable = true;
-    memoryPercent = 100;
-  };
+  swapDevices = [
+    { device = "/dev/disk/by-partlabel/SWAP"; }
+  ];
 
   # Storage
   fileSystems."/" =
