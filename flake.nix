@@ -22,6 +22,10 @@
       url = "github:sadjow/claude-code-nix/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-sweep = {
+      url = "github:jzbor/nix-sweep/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, nixos-hardware, ... }@inputs:

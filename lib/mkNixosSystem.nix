@@ -6,6 +6,7 @@
   plasma-manager,
   lanzaboote,
   claude-code,
+  nix-sweep,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -27,6 +28,7 @@ nixpkgs.lib.nixosSystem {
     lanzaboote.nixosModules.lanzaboote
     hardwareConfig
     home-manager.nixosModules.home-manager
+    nix-sweep.nixosModules.default
     ../modules
     hostConfig
   ];

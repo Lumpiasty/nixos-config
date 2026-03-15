@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "cf": {
+      "locked": {
+        "lastModified": 1756852014,
+        "narHash": "sha256-OrfTRBwerFrlK1fbWhu1eW40XUrOdE/Rq7IyxthEpcA=",
+        "owner": "jzbor",
+        "repo": "cornflakes",
+        "rev": "7ef6d8be9b66f46cee3af1d5797e01f301b93149",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jzbor",
+        "repo": "cornflakes",
+        "type": "github"
+      }
+    },
     "claude-code": {
       "inputs": {
         "flake-utils": "flake-utils",
@@ -29,6 +44,21 @@
         "owner": "ipetkov",
         "repo": "crane",
         "rev": "69f538cdce5955fcd47abfed4395dc6d5194c1c5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
+    "crane_2": {
+      "locked": {
+        "lastModified": 1762538466,
+        "narHash": "sha256-8zrIPl6J+wLm9MH5ksHcW7BUHo7jSNOu0/hA0ohOOaM=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "0cea393fffb39575c46b7a0318386467272182fe",
         "type": "github"
       },
       "original": {
@@ -154,6 +184,29 @@
         "type": "github"
       }
     },
+    "nix-sweep": {
+      "inputs": {
+        "cf": "cf",
+        "crane": "crane_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1772493505,
+        "narHash": "sha256-4EWS5n9wWSNEUuqj8Nh3sPCjjRSOEh4bUd7j+wqDpSA=",
+        "owner": "jzbor",
+        "repo": "nix-sweep",
+        "rev": "6fed48ccc7afdca7f8ea1b20260bcf736aad9ee2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jzbor",
+        "ref": "main",
+        "repo": "nix-sweep",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1772972630,
@@ -238,6 +291,7 @@
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-flatpak": "nix-flatpak",
+        "nix-sweep": "nix-sweep",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "plasma-manager": "plasma-manager"
