@@ -47,7 +47,7 @@ in
     programs.virt-manager.enable = true;
 
     services.transmission = {
-      enable = config.lumpiasty.pc;
+      enable = config.lumpiasty.pc && (config.lumpiasty.gaming == false);
       package = pkgs.transmission_4; # For some reason 3.x is still default
       user = "user";
       group = "users";

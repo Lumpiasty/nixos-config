@@ -121,6 +121,7 @@
       cores = 2;
     };
   };
+  services.transmission.enable = lib.mkForce false;
 
   nix.settings.system-features = [ "gccarch-haswell" ];
 
