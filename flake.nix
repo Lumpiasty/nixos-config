@@ -27,7 +27,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     peerix = {
-      url = "github:sophronesis/peerix";
+      url = "git+ssh://git@gitea.lumpiasty.xyz/Lumpiasty/peerix.git"; # fork of github:sophronesis/peerix
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

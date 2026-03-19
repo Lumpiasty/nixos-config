@@ -279,17 +279,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1772566807,
-        "narHash": "sha256-e5Fdb2K0GHPGVj3l+Jn/QIdxaR30WZATmmOb6amaVRA=",
-        "owner": "sophronesis",
-        "repo": "peerix",
-        "rev": "a56a9ff1dd1023bae1d68dfe5d1133822ad6f4ae",
-        "type": "github"
+        "lastModified": 1773939829,
+        "narHash": "sha256-YFcPBu5Z2s5DEhJgLD2f7/P5xiyhQkCXgBVjYaVPxAI=",
+        "ref": "refs/heads/master",
+        "rev": "25338911d013865b68bd52041eb2f0eeb4955cbf",
+        "revCount": 285,
+        "type": "git",
+        "url": "ssh://git@gitea.lumpiasty.xyz/Lumpiasty/peerix.git"
       },
       "original": {
-        "owner": "sophronesis",
-        "repo": "peerix",
-        "type": "github"
+        "type": "git",
+        "url": "ssh://git@gitea.lumpiasty.xyz/Lumpiasty/peerix.git"
       }
     },
     "plasma-manager": {
