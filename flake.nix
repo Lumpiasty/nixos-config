@@ -26,6 +26,10 @@
       url = "github:jzbor/nix-sweep/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    peerix = {
+      url = "github:sophronesis/peerix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, nixos-hardware, ... }@inputs:

@@ -24,4 +24,9 @@ in
 
     gc = true; # Run GC afterwards
   };
+
+  services.peerix = {
+    enable = true;
+    trackerUrl = null;  # Use LAN mode instead of Iroh
+  };
 }

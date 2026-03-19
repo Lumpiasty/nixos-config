@@ -7,6 +7,7 @@
   lanzaboote,
   claude-code,
   nix-sweep,
+  peerix,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -29,6 +30,7 @@ nixpkgs.lib.nixosSystem {
     hardwareConfig
     home-manager.nixosModules.home-manager
     nix-sweep.nixosModules.default
+    peerix.nixosModules.peerix
     ../modules
     hostConfig
   ];
