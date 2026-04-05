@@ -11,6 +11,7 @@
         name = "Lumpiasty";
         email = "arek.dzski@gmail.com";
       };
+      signing.format = null; # New default
     };
 
     programs.vscode = {
@@ -36,7 +37,7 @@
       gnumake
       docker
       docker-buildx
-      protonvpn-gui
+      proton-vpn
       wl-clipboard
       devenv
       dig
