@@ -113,6 +113,7 @@
     users.user = true;
     gaming = true;
     # users.drugi = true;
+    enableTailscale = true;
   };
 
   virtualisation.vmVariant = {
