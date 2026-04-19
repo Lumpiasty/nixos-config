@@ -1,6 +1,7 @@
 self: super:
 {
   ddccontrol = super.callPackage ../pkgs/ddccontrol {};
+  opencode-claude-auth = super.callPackage ../pkgs/opencode-claude-auth {};
   # Pin some kde packages to 6.3.1, 6.3.2 breaks thunderbolt
   # kdePackages = super.kdePackages.overrideScope(kdeFinal: kdePrev: {
   #   kwin = kdePrev.kwin.overrideAttrs (prevAttrs: {

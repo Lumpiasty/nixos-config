@@ -47,11 +47,32 @@
       nodejs_24
       codex
       claude-code
-      opencode
+      (
+        # Wrapping opencode to set the OPENCODE_ENABLE_EXA environment variable
+        runCommand "opencode" {
+          buildInputs = [ makeWrapper ];
+        } ''
+          mkdir -p $out/bin
+          makeWrapper ${pkgs.opencode}/bin/opencode $out/bin/opencode \
+            --set OPENCODE_ENABLE_EXA "1"
+          ''
+      )
       winbox4
       amdgpu_top
       dua
     ];
+
+    # Inject the opencode-claude-auth plugin into the user's opencode.json without
+    # overwriting it — replaces any stale store path for this plugin and adds if absent.
+    home.activation.opencodeClaudeAuth = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      cfg="$HOME/.config/opencode/opencode.json"
+      mkdir -p "$(dirname "$cfg")"
+      [ -f "$cfg" ] || echo '{}' > "$cfg"
+      tmp=$(mktemp)
+      ${pkgs.jq}/bin/jq --arg path "file://${pkgs.opencode-claude-auth}" '
+        .plugin = ((.plugin // []) | map(select(test("opencode-claude-auth") | not)) + [$path])
+      ' "$cfg" > "$tmp" && mv "$tmp" "$cfg"
+    '';
 
     # SSH config
     programs.ssh = {
