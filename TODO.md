@@ -10,6 +10,7 @@
     - [*] nie wyłączaj głądzika przy pisaniu
     - [*] prędkość przewijania na gładziku
     - domyślne programy - rozpisać jakie
+        - libreoffice writer dla .doc
     - [*] wskaźnik myszy
     - menedżer plików
         - rozwinięty terminal
@@ -85,3 +86,5 @@
 26. https://redlib.nadeko.net/r/unixporn/comments/1l5ll27/hyprland_i_3_quickshell/
 27. Donut browser, Camoufox
 28. cups, sane w home-manager
+29. earlyoom
+30. Llama.cpp, expose via tailscale, allow from homelab's openwebui
