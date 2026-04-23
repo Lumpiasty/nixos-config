@@ -13,24 +13,15 @@
       libreoffice-qt6-fresh
       vlc
       inkscape
-      # Working aroung bug of qtpass
-      # https://github.com/IJHack/QtPass/issues/663
-      (
-        # https://nixos.wiki/wiki/Nix_Cookbook#Wrapping_packages
-        runCommand "qtpass" {
-          buildInputs = [ makeWrapper ];
-        } ''
-          mkdir $out
-          # Link every top-level folder from pkgs.hello to our new target
-          ln -s ${qtpass}/* $out
-          # Except the bin folder
-          rm $out/bin
-          mkdir $out/bin
-          # creating a wrapper
-          makeWrapper ${qtpass}/bin/qtpass $out/bin/qtpass \
-            --set QT_QPA_PLATFORM xcb
-        ''
-      )
+      (qtpass.overrideAttrs (old: rec {
+        version = "1.7.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "IJHack";
+          repo = "QtPass";
+          tag = "v${version}";
+          hash = "sha256-0qbKM24v7xRiuBEs+rHP2l1W8bCl7uJRc3jzpDdjp/c=";
+        };
+      }))
       signal-desktop
       transmission_4-qt6
       thunderbird
