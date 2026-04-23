@@ -11,10 +11,10 @@ stdenv.mkDerivation {
   version = "0.0.0";
 
   src = fetchFromGitHub {
-    owner = "TenSeventy7";
+    owner = "Lumpiasty";
     repo = "acer-wmi-ext";
-    rev = "78aaf9392e1fbdd62c3ec9944e9615505485ec04";
-    sha256 = "sha256-AmhBnZiy7llYqHB9gD6T7lK4L2qhtl5pBWAf+H+V8hE=";
+    rev = "71bc84f4729eb53e7786aaed37957c6d91ce0cfd";
+    sha256 = "sha256-eMKEVgEFaBB1oDL5mlmnJyEj24jzi8HsISl3cCzstD8=";
   };
 
   nativeBuildInputs = [ kernel.moduleBuildDependencies ];
@@ -30,19 +30,6 @@ stdenv.mkDerivation {
     "${kernel.dev}/lib/modules/${kernel.modDirVersion}/build"
     "M=$(sourceRoot)"
   ];
-
-  patchPhase = ''
-    # Add support for Acer Swift 14 (SFG14-63) model
-    # Using values found by playing with performance settings in acer's software on windows
-    # https://github.com/hirschmann/nbfc/wiki/Probe-the-EC's-registers
-    # Also, disable USB control because not sure, need to verify
-    patch -p1 < ${./sfg14-63.patch}
-
-    # Create Kbuild file for module
-    cat > Kbuild <<EOF
-    obj-m := acer-wmi-ext.o
-    EOF
-  '';
 
   buildFlags = [ "modules" ];
   installFlags = [ "INSTALL_MOD_PATH=${placeholder "out"}" ];
