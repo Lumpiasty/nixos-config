@@ -8,13 +8,7 @@
       vesktop
       spotify
       pass-wayland
-      (teamspeak6-client.overrideAttrs (old: {
-        version = "6.0.0-beta3";
-        src = pkgs.fetchurl {
-          url = "https://files.teamspeak-services.com/pre_releases/client/6.0.0-beta3/teamspeak-client.tar.gz";
-          sha256 = "sha256-KR9wVjqqoV2ZNJj+zjErR5TdYS7Y/HcaXAQekX1NzDM=";
-        };
-      }))
+      teamspeak6-client
       easyeffects
       libreoffice-qt6-fresh
       vlc
