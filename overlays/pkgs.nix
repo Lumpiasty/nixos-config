@@ -13,6 +13,5 @@ self: super:
   # });
   linuxPackages = super.linuxPackages.extend (lpself: lpsuper: {
     acer-wmi-ext = lpsuper.callPackage ../pkgs/acer-wmi-ext {};
-    acer-wmi-battery = lpsuper.callPackage ../pkgs/acer-wmi-battery {};
   });
 }
