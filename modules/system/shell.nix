@@ -10,6 +10,7 @@
     tree
     usbutils
     pciutils
+    efibootmgr
   ];
   
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

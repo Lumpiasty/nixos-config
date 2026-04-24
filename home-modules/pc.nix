@@ -28,6 +28,7 @@
       pwgen
       siyuan
       gimp
+      ventoy-full-qt
     ];
     programs.librewolf.enable = true;
     services.easyeffects.enable = true;
