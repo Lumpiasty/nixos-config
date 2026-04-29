@@ -11,7 +11,6 @@
         name = "Lumpiasty";
         email = "arek.dzski@gmail.com";
       };
-      signing.format = null; # New default
     };
 
     programs.vscode = {
