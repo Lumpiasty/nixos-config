@@ -34,6 +34,10 @@
       url = "github:Lumpiasty/acer-wmi-ext/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixbsd = {
+      url = "path:/home/user/Projects/nixbsd";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, nixos-hardware, ... }@inputs:
@@ -41,11 +45,13 @@
       nixosConfigurations = 
         let
           mkNixosSystem = import lib/mkNixosSystem.nix inputs;
+          mkNixbsdSystem = import lib/mkNixbsdSystem.nix inputs;
         in
           with nixos-hardware.nixosModules; {
             x260 = mkNixosSystem lenovo-thinkpad-x260 hosts/x260.nix;
             acer = mkNixosSystem {} hosts/acer.nix;
             gaming-pc = mkNixosSystem {} hosts/gaming-pc.nix;
+            bestieTest = mkNixbsdSystem hosts/bestieTest.nix;
           };
     };
 }
