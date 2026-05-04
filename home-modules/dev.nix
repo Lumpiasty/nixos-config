@@ -21,6 +21,20 @@
         pkgs.vscode-extensions.arrterian.nix-env-selector
         pkgs.vscode-extensions.jnoortheen.nix-ide
       ];
+      # profiles.default.userSettings = {
+      #   "claudeCode.claudeProcessWrapper" = "${pkgs.claude-code}/bin/claude-code";
+      # };
+    };
+
+    # Just a fixed-location executable that launches claude code
+    # so we can point vscode's extenstion at it, not the nix store path
+    # remove it once we configure vscode using nix
+    home.file.".config/claude-code-wrapper" = {
+      text = ''
+        #!${pkgs.stdenv.shell}
+        exec ${pkgs.claude-code}/bin/claude "$@"
+      '';
+      executable = true;
     };
 
     home.packages = with pkgs; [
