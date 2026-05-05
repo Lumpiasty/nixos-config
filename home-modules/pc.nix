@@ -6,7 +6,16 @@
   config = lib.mkIf (config.lumpiastyHome.enablePcApps && osConfig.lumpiasty.pc) {
     home.packages = with pkgs; [
       vesktop
-      spotify
+      # Manual update, not yet in nixpkgs as for now
+      (spotify.overrideAttrs (old: rec {
+        version = "1.2.86.502.g8cd7fb22";
+        rev = "94";
+        src = fetchurl {
+          name = "spotify-${version}-${rev}.snap";
+          url = "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_${rev}.snap";
+          hash = "sha256-XhwyaObck6viIvDRXEztlSLja5fsfw5HgHUUQzMehLI=";
+        };
+      }))
       pass-wayland
       teamspeak6-client
       easyeffects
