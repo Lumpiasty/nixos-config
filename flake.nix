@@ -34,6 +34,10 @@
       url = "github:Lumpiasty/acer-wmi-ext/main";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ntfsplus = {
+      url = "github:cmspam/ntfsplus-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, nixos-hardware, ... }@inputs:

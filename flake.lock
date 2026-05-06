@@ -220,6 +220,22 @@
         "type": "github"
       }
     },
+    "linux-ntfs": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777784940,
+        "narHash": "sha256-Dbh1r86X0uNx8keTkdg+uzq4/+DHm+IiTuxrHXlklXA=",
+        "owner": "namjaejeon",
+        "repo": "linux-ntfs",
+        "rev": "9e031cf453d8b3c226aac7cb7105af46efd79690",
+        "type": "github"
+      },
+      "original": {
+        "owner": "namjaejeon",
+        "repo": "linux-ntfs",
+        "type": "github"
+      }
+    },
     "nix-flatpak": {
       "locked": {
         "lastModified": 1767983141,
@@ -288,6 +304,27 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "ntfsplus": {
+      "inputs": {
+        "linux-ntfs": "linux-ntfs",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1774317576,
+        "narHash": "sha256-HSDFaDLvfS/NqJlXbHh9135DEpqH6JrNuWqbu3YPcTg=",
+        "owner": "cmspam",
+        "repo": "ntfsplus-flake",
+        "rev": "e22d1bcbac31b4e6484d32c503396e8184650215",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cmspam",
+        "repo": "ntfsplus-flake",
         "type": "github"
       }
     },
@@ -369,6 +406,7 @@
         "nix-sweep": "nix-sweep",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "ntfsplus": "ntfsplus",
         "peerix": "peerix",
         "plasma-manager": "plasma-manager"
       }

@@ -94,13 +94,18 @@
       "/var/games" = 
         {
           device = "/dev/disk/by-uuid/8A3094A230949733"; # "Shared" NTFS partition
-          fsType = "ntfs-3g";
+          fsType = "ntfs";
           options = [
             "uid=1000" "gid=100" # My user account
             "nofail" # Don't fail boot if failed to mount because windows left it dirty
           ];
         };
     };
+
+  # Use ntfs-plus instead driver
+  services.ntfsplus.enable = true;
+  # Force disable ntfs-3g driver
+  boot.supportedFilesystems.ntfs = lib.mkForce false;
 
   # Config modules
   lumpiasty = {

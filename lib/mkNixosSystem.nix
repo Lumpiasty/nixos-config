@@ -9,6 +9,7 @@
   nix-sweep,
   peerix,
   acer-wmi-ext,
+  ntfsplus,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -36,6 +37,7 @@ nixpkgs.lib.nixosSystem {
     home-manager.nixosModules.home-manager
     nix-sweep.nixosModules.default
     peerix.nixosModules.peerix
+    ntfsplus.nixosModules.default
     ../modules
     hostConfig
   ];
