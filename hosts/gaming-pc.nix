@@ -94,9 +94,12 @@
       "/var/games" = 
         {
           device = "/dev/disk/by-uuid/8A3094A230949733"; # "Shared" NTFS partition
-          fsType = "ntfs-3g";
+          fsType = "ntfs3";
           options = [
             "uid=1000" "gid=100" # My user account
+            "force" # Mount even if dirty
+            "windows_names" # Prevent creation of fiiles with name not allowed by Windows
+            "sys_immutable"
             "nofail" # Don't fail boot if failed to mount because windows left it dirty
           ];
         };
