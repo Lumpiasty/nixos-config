@@ -223,15 +223,16 @@
     "linux-ntfs": {
       "flake": false,
       "locked": {
-        "lastModified": 1777784940,
-        "narHash": "sha256-Dbh1r86X0uNx8keTkdg+uzq4/+DHm+IiTuxrHXlklXA=",
-        "owner": "namjaejeon",
+        "lastModified": 1778111793,
+        "narHash": "sha256-E+f1utc2Az4ZmqvkZ8lDgHpXsheJobUMbLff1vdpQHE=",
+        "owner": "Lumpiasty",
         "repo": "linux-ntfs",
-        "rev": "9e031cf453d8b3c226aac7cb7105af46efd79690",
+        "rev": "7fbf82056e26d99bfa4d5aab87ce287cd8c8cbef",
         "type": "github"
       },
       "original": {
-        "owner": "namjaejeon",
+        "owner": "Lumpiasty",
+        "ref": "main",
         "repo": "linux-ntfs",
         "type": "github"
       }

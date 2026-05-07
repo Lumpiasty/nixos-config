@@ -37,6 +37,7 @@
     ntfsplus = {
       url = "github:cmspam/ntfsplus-flake";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.linux-ntfs.url = "github:Lumpiasty/linux-ntfs/main";
     };
   };
   
