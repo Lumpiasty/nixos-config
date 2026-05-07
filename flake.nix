@@ -39,6 +39,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.linux-ntfs.url = "github:Lumpiasty/linux-ntfs/main";
     };
+    nix-skills = {
+      url = "github:sudosubin/nix-skills";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, nixos-hardware, ... }@inputs:

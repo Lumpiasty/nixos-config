@@ -10,6 +10,7 @@
   peerix,
   acer-wmi-ext,
   ntfsplus,
+  nix-skills,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -26,6 +27,7 @@ nixpkgs.lib.nixosSystem {
       nixpkgs.overlays = [
         claude-code.overlays.default
         acer-wmi-ext.overlays.default
+        nix-skills.overlays.default
       ];
       nix.settings = {
         substituters = [ "https://claude-code.cachix.org" ];

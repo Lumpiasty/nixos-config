@@ -253,6 +253,26 @@
         "type": "github"
       }
     },
+    "nix-skills": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775452536,
+        "narHash": "sha256-1MjzL/U5OtALBmsel4YHVSK9jr2c/YP4eXfi7lA5C+o=",
+        "owner": "sudosubin",
+        "repo": "nix-skills",
+        "rev": "c2d1958a5cdd7ee83f552c046fbc7cb43e8171e4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sudosubin",
+        "repo": "nix-skills",
+        "type": "github"
+      }
+    },
     "nix-sweep": {
       "inputs": {
         "cf": "cf",
@@ -404,6 +424,7 @@
         "home-manager": "home-manager",
         "lanzaboote": "lanzaboote",
         "nix-flatpak": "nix-flatpak",
+        "nix-skills": "nix-skills",
         "nix-sweep": "nix-sweep",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
