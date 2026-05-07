@@ -131,6 +131,9 @@
             --set OPENCODE_ENABLE_EXA "1"
           ''
       );
+      skills = with pkgs.skills; {
+        caveman = majiayu000."claude-skill-registry".caveman + "/";
+      };
     };
   };
 }
