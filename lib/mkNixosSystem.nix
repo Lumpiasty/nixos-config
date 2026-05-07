@@ -11,6 +11,7 @@
   acer-wmi-ext,
   ntfsplus,
   nix-skills,
+  nixpkgs-linuxeol,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -21,6 +22,7 @@ nixpkgs.lib.nixosSystem {
     inherit nix-flatpak;
     inherit plasma-manager;
     inherit acer-wmi-ext;
+    inherit nixpkgs-linuxeol;
   };
   modules = [
     {

@@ -328,6 +328,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-linuxeol": {
+      "locked": {
+        "lastModified": 1776914381,
+        "narHash": "sha256-F4YjgKNs1kEIfTsinPDusep2Y+GDFK+3R2AujSZQ18M=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "162f04bf3dd222187388bc990a8678170d594419",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "162f04bf3dd222187388bc990a8678170d594419",
+        "type": "github"
+      }
+    },
     "ntfsplus": {
       "inputs": {
         "linux-ntfs": "linux-ntfs",
@@ -428,6 +444,7 @@
         "nix-sweep": "nix-sweep",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-linuxeol": "nixpkgs-linuxeol",
         "ntfsplus": "ntfsplus",
         "peerix": "peerix",
         "plasma-manager": "plasma-manager"

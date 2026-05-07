@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, nixpkgs-linuxeol, ... }:
 
 {
   # Identity
@@ -53,7 +53,7 @@
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_19;
+  boot.kernelPackages = nixpkgs-linuxeol.legacyPackages."x86_64-linux".linuxKernel.packages.linux_6_19;
 
   # Swap
   zramSwap = {
@@ -129,7 +129,13 @@
   };
   services.transmission.enable = lib.mkForce false;
 
+  # programs.steam.enable = true;
+  # programs.steam.gamescopeSession.enable = true;
+
   nix.settings.system-features = [ "gccarch-haswell" ];
+  
+  # Local LLaMA.cpp server
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 
   # nixpkgs.hostPlatform = {
   #   system = "x86_64-linux";

@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, nixpkgs-linuxeol, ... }:
 
 rec {
   # Identity
@@ -23,7 +23,7 @@ rec {
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_19;
+  boot.kernelPackages = nixpkgs-linuxeol.legacyPackages."x86_64-linux".linuxKernel.packages.linux_6_19;
   boot.zfs.package = pkgs.zfs_unstable;
 
   # Swap
