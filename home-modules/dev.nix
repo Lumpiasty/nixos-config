@@ -60,16 +60,6 @@
       nodejs_24
       codex
       claude-code
-      (
-        # Wrapping opencode to set the OPENCODE_ENABLE_EXA environment variable
-        runCommand "opencode" {
-          buildInputs = [ makeWrapper ];
-        } ''
-          mkdir -p $out/bin
-          makeWrapper ${pkgs.opencode}/bin/opencode $out/bin/opencode \
-            --set OPENCODE_ENABLE_EXA "1"
-          ''
-      )
       winbox4
       amdgpu_top
       dua
@@ -128,5 +118,19 @@
         fi
       ''
     );
+
+    programs.opencode = {
+      enable = true;
+      package = (
+        # Wrapping opencode to set the OPENCODE_ENABLE_EXA environment variable
+        pkgs.runCommand "opencode" {
+          buildInputs = [ pkgs.makeWrapper ];
+        } ''
+          mkdir -p $out/bin
+          makeWrapper ${pkgs.opencode}/bin/opencode $out/bin/opencode \
+            --set OPENCODE_ENABLE_EXA "1"
+          ''
+      );
+    };
   };
 }
