@@ -2,9 +2,8 @@
 
 {
   config = lib.mkIf config.boot.zfs.enabled {
-    # Set ARC max to 5% of physical RAM at boot
     systemd.services."zfs-arc-limit" = {
-      description = "Set ZFS ARC max to 5% of physical RAM";
+      description = "Set ZFS ARC max to 20% of physical RAM";
       # Ensure the module is loaded before we write to /sys
       after = [ "systemd-modules-load.service" ];
       # Run early, but it’s fine if ZFS has already imported; the limit still applies
@@ -15,8 +14,8 @@
         # Total RAM in kB
         mem_kb=$(awk '/MemTotal:/ {print $2}' /proc/meminfo)
         echo "DEBUG: Total RAM: $mem_kb kB"
-        # 5%, in bytes
-        arc_max_bytes=$(( mem_kb * 1024 / 100 * 5 ))
+        # 20%, in bytes
+        arc_max_bytes=$(( mem_kb * 1024 / 100 * 20 ))
         echo "DEBUG: Setting ZFS ARC max to: $arc_max_bytes bytes"
         param="/sys/module/zfs/parameters/zfs_arc_max"
         if [ -w "$param" ]; then
