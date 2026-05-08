@@ -24,6 +24,12 @@
       # profiles.default.userSettings = {
       #   "claudeCode.claudeProcessWrapper" = "${pkgs.claude-code}/bin/claude-code";
       # };
+      argvSettings = {
+        # https://github.com/microsoft/vscode/issues/262065#issue-3328712020
+        disable-hardware-acceleration = osConfig.networking.hostName == "acer";
+        # If not set, vscode errors out when starting with "argv.json incorrect"
+        enable-crash-reporter = false;
+      };
     };
 
     # Just a fixed-location executable that launches claude code
