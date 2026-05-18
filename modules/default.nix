@@ -20,6 +20,7 @@
     desktop/plasma.nix
     desktop/touchpad.nix
     desktop/pulseaudio.nix
+    desktop/audio-rt.nix
     desktop/tailscale.nix
   ];
 }

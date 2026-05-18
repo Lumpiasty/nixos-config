@@ -20,13 +20,21 @@
       # no need to redefine it in your config for now)
       #media-session.enable = true;
 
+      extraConfig.pipewire."99-quantum" = {
+        "context.properties" = {
+          "default.clock.quantum"     = 1024;
+          "default.clock.min-quantum" = 1024;
+          "default.clock.max-quantum" = 8192;
+        };
+      };
+
       wireplumber.configPackages = [
         (pkgs.writeTextDir "share/wireplumber/wireplumber.conf.d/99-alsa-nova-3.conf" ''
           monitor.alsa.rules = [
             {
               matches = [
                 {
-                  node.name = "alsa_output.usb-SteelSeries_Arctis_Nova_3-00.analog-stereo"
+                  node.name = "alsa_output.usb-SteelSeries_Arctis_Nova_7-00.analog-stereo"
                 }
               ]
               actions = {
@@ -34,7 +42,7 @@
                   audio.format = "S24LE"
                   audio.rate = 96000
                   api.alsa.period-size = 1024
-                  api.alsa.period-num = 4
+                  api.alsa.period-num = 8
                   api.alsa.disable-batch = false
                 }
               }

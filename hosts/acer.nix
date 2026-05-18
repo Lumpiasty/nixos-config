@@ -71,6 +71,7 @@ rec {
     amdCpu = true;
     noMitigations = false;
     enablePulseaudio = true;
+    audioRt.enable = true;
     sshd = true;
     users.user = true;
     # users.drugi = true;
