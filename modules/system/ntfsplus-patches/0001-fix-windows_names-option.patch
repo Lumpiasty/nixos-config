@@ -1,0 +1,25 @@
+From 8b5c5d23c1218a996a1d6780ca56853454813418 Mon Sep 17 00:00:00 2001
+From: Lumpiasty <arek.dzski@gmail.com>
+Date: Thu, 7 May 2026 01:50:05 +0200
+Subject: [PATCH 1/2] fix windows_names option
+
+---
+ super.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/super.c b/super.c
+index 875fb5a..49ad898 100644
+--- a/super.c
++++ b/super.c
+@@ -91,7 +91,7 @@ static const struct fs_parameter_spec ntfs_parameters[] = {
+ 	fsparam_flag("sys_immutable",		Opt_sys_immutable),
+ 	fsparam_flag("nohidden",		Opt_nohidden),
+ 	fsparam_flag("hide_dot_files",		Opt_hide_dot_files),
+-	fsparam_flag("windows_names",		Opt_check_windows_names),
++	fsparam_bool("windows_names",		Opt_check_windows_names),
+ 	fsparam_flag("acl",			Opt_acl),
+ 	fsparam_flag("discard",			Opt_discard),
+ 	fsparam_flag("sparse",			Opt_sparse),
+-- 
+2.53.0
+

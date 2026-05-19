@@ -23,6 +23,7 @@ nixpkgs.lib.nixosSystem {
     inherit plasma-manager;
     inherit acer-wmi-ext;
     inherit nixpkgs-linuxeol;
+    inherit ntfsplus;
   };
   modules = [
     {
@@ -41,7 +42,6 @@ nixpkgs.lib.nixosSystem {
     home-manager.nixosModules.home-manager
     nix-sweep.nixosModules.default
     peerix.nixosModules.peerix
-    ntfsplus.nixosModules.default
     ../modules
     hostConfig
   ];
