@@ -2,11 +2,11 @@
 
 stdenv.mkDerivation {
   pname = "opencode-claude-auth";
-  version = "1.5.0";
+  version = "1.5.4";
 
   src = fetchurl {
-    url = "https://registry.npmjs.org/opencode-claude-auth/-/opencode-claude-auth-1.5.0.tgz";
-    hash = "sha512-5NSL+x++VTe2ZrFSznXKv7imiKObIBz0QXPuL+g1NAXAcdTGcbEbQBvvHZeIaSBNjmwpY2MR67Yez1f3LlPl7w==";
+    url = "https://registry.npmjs.org/opencode-claude-auth/-/opencode-claude-auth-1.5.4.tgz";
+    hash = "sha256-9iByuNTg/MTD3VGeqpBaBCBaooXm97BuvP0fPXDoPGc=";
   };
 
   dontBuild = true;
