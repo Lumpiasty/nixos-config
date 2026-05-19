@@ -58,6 +58,9 @@
         # Exclude audiocd-kio due to build failure
         (builtins.filter (pkg: pkg.pname != "audiocd-kio"))
 
+        # Exclude audiotube due to build failure
+        (builtins.filter (pkg: pkg.pname != "audiotube"))
+
         # Exclude plasma-mobile
         (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
       ]) ++ [
