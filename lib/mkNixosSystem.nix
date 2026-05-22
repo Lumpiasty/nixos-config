@@ -12,6 +12,7 @@
   ntfsplus,
   nix-skills,
   nixpkgs-linuxeol,
+  bun2nix,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -31,7 +32,7 @@ nixpkgs.lib.nixosSystem {
         claude-code.overlays.default
         acer-wmi-ext.overlays.default
         nix-skills.overlays.default
-      ];
+      ] ++ (import ../overlays/pkgs.nix { inherit bun2nix; });
       nix.settings = {
         substituters = [ "https://claude-code.cachix.org" ];
         trusted-public-keys = [ "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk=" ];
