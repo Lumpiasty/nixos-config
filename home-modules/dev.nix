@@ -13,17 +13,32 @@
       };
     };
 
-    programs.vscode = {
+    # programs.vscode = {
+    #   enable = true;
+    #   profiles.default.extensions = [
+    #     pkgs.vscode-extensions.github.copilot
+    #     pkgs.vscode-extensions.github.copilot-chat
+    #     pkgs.vscode-extensions.arrterian.nix-env-selector
+    #     pkgs.vscode-extensions.jnoortheen.nix-ide
+    #   ];
+    #   # profiles.default.userSettings = {
+    #   #   "claudeCode.claudeProcessWrapper" = "${pkgs.claude-code}/bin/claude-code";
+    #   # };
+    #   argvSettings = {
+    #     # https://github.com/microsoft/vscode/issues/262065#issue-3328712020
+    #     disable-hardware-acceleration = osConfig.networking.hostName == "acer";
+    #     # If not set, vscode errors out when starting with "argv.json incorrect"
+    #     enable-crash-reporter = false;
+    #   };
+    # };
+
+    programs.vscodium = {
       enable = true;
-      profiles.default.extensions = [
-        pkgs.vscode-extensions.github.copilot
-        pkgs.vscode-extensions.github.copilot-chat
-        pkgs.vscode-extensions.arrterian.nix-env-selector
-        pkgs.vscode-extensions.jnoortheen.nix-ide
+      profiles.default.extensions = with pkgs; [
+        vscode-extensions.mkhl.direnv
+        vscode-extensions.jnoortheen.nix-ide
+        vscode-extensions.hashicorp.hcl
       ];
-      # profiles.default.userSettings = {
-      #   "claudeCode.claudeProcessWrapper" = "${pkgs.claude-code}/bin/claude-code";
-      # };
       argvSettings = {
         # https://github.com/microsoft/vscode/issues/262065#issue-3328712020
         disable-hardware-acceleration = osConfig.networking.hostName == "acer";
