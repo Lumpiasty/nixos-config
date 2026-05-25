@@ -108,15 +108,15 @@
       # `programs.ssh.matchBlocks."*"`.
       enableDefaultConfig = false;
 
-      matchBlocks."*" = {
-        user = "root";
-        controlMaster = "auto";
-        controlPersist = "3600";
-        controlPath = "/run/user/%i/ssh-socket-%r@%h:%p";
-        serverAliveInterval = 20;
+      settings."*" = {
+        User = "root";
+        ControlMaster = "auto";
+        ControlPersist = "3600";
+        ControlPath = "/run/user/%i/ssh-socket-%r@%h:%p";
+        ServerAliveInterval = 20;
       };
 
-      matchBlocks."github.com".user = "git";
+      settings."github.com".User = "git";
 
       extraConfig = ''
         Include config_local
