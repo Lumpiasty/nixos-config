@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1776998627,
-        "narHash": "sha256-n0ENc4Xi1d3ApoHTRsfssC6AAroFgIKXJzJFykxNanY=",
+        "lastModified": 1779728104,
+        "narHash": "sha256-Apxb4B9JWPyV1RUqXkaPRACwulRwHZmaZQ674Rr+Sn0=",
         "owner": "Lumpiasty",
         "repo": "acer-wmi-ext",
-        "rev": "d0be381bbd661ed4bb327a9c92b980a0b9edacac",
+        "rev": "5fc3299fef7ece6e0f646ba1ad1d3a22a788df2f",
         "type": "github"
       },
       "original": {
