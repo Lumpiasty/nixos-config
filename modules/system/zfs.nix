@@ -32,5 +32,6 @@
         RemainAfterExit = true;
       };
     };
+    boot.zfs.forceImportRoot = false; # New default in 26.11
   };
 }
