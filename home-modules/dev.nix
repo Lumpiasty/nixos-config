@@ -34,6 +34,13 @@
 
     programs.vscodium = {
       enable = true;
+      package = assert pkgs.vscodium.version == "1.116.02821"; (pkgs.vscodium.overrideAttrs rec {
+        version = "1.121.03429";
+        src = pkgs.fetchurl {
+          url = "https://github.com/VSCodium/vscodium/releases/download/${version}/VSCodium-linux-x64-${version}.tar.gz";
+          hash = "sha256-LJsGc11MH6zlcJNfSWjTWPn2Jp9dkjeBPQuCXH1woUM=";
+        };
+      });
       profiles.default.extensions = with pkgs; [
         vscode-extensions.mkhl.direnv
         vscode-extensions.jnoortheen.nix-ide
