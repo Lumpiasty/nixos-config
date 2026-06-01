@@ -7,30 +7,14 @@
     home.packages = with pkgs; [
       vesktop
       # Manual update, not yet in nixpkgs as for now
-      (spotify.overrideAttrs (old: rec {
-        version = "1.2.86.502.g8cd7fb22";
-        rev = "94";
-        src = fetchurl {
-          name = "spotify-${version}-${rev}.snap";
-          url = "https://api.snapcraft.io/api/v1/snaps/download/pOBIoZ2LrCB3rDohMxoYGnbN14EHOgD7_${rev}.snap";
-          hash = "sha256-XhwyaObck6viIvDRXEztlSLja5fsfw5HgHUUQzMehLI=";
-        };
-      }))
+      spotify
       pass-wayland
       teamspeak6-client
       easyeffects
       libreoffice-qt6-fresh
       vlc
       inkscape
-      (qtpass.overrideAttrs (old: rec {
-        version = "1.7.0";
-        src = pkgs.fetchFromGitHub {
-          owner = "IJHack";
-          repo = "QtPass";
-          tag = "v${version}";
-          hash = "sha256-0qbKM24v7xRiuBEs+rHP2l1W8bCl7uJRc3jzpDdjp/c=";
-        };
-      }))
+      qtpass
       signal-desktop
       transmission_4-qt6
       thunderbird
