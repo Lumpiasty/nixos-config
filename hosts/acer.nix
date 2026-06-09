@@ -100,6 +100,8 @@ rec {
   
   # For dev vm stuff
   networking.firewall.trustedInterfaces = [ "br0" ];
+  # Local LLaMA.cpp server
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 
   # Battery driver
   boot.extraModulePackages = [
@@ -114,8 +116,9 @@ rec {
   ];
   boot.kernelModules = [ "acer-wmi-ext" ];
 
-  # Breaks sleep, not enabling for now
-  # lumpiasty.acerUndervolt = true;
+  # Installs ryzenadj + ryzen_smu kernel module for manual undervolt experiments.
+  # Does not auto-apply any tuning yet.
+  lumpiasty.acerUndervolt = true;
 
   boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
