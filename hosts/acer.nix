@@ -116,15 +116,15 @@ rec {
   ];
   boot.kernelModules = [ "acer-wmi-ext" ];
 
-  # Installs ryzenadj + ryzen_smu kernel module for manual undervolt experiments.
-  # Does not auto-apply any tuning yet.
-  lumpiasty.acerUndervolt = true;
+  # # Installs ryzenadj + ryzen_smu kernel module for manual undervolt experiments.
+  # # Does not auto-apply any tuning yet.
+  # lumpiasty.acerUndervolt = true;
 
   boot.initrd.kernelModules = [ "amdgpu" "thunderbolt" ];
 
   boot.kernelParams = [ 
-  # https://community.frame.work/t/attn-critical-bugs-in-amdgpu-driver-included-with-kernel-6-18-x-6-19-x/79221
-    "amdgpu.cwsr_enable=0"
+  # # https://community.frame.work/t/attn-critical-bugs-in-amdgpu-driver-included-with-kernel-6-18-x-6-19-x/79221
+  #   "amdgpu.cwsr_enable=0"
   
   # Increase GPU memory limits
     "ttm.pages_limit=7864320"      # 30GB in pages (30 * 1024 * 1024 * 1024 / 4096)
@@ -133,8 +133,8 @@ rec {
     "amdttm.page_pool_size=7864320"
    ];
 
-  programs.corectrl.enable = true;
-  hardware.amdgpu.overdrive.enable = true;
+  # programs.corectrl.enable = true;
+  # hardware.amdgpu.overdrive.enable = true;
 
   fonts = {
     fontconfig = {
