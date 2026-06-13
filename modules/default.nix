@@ -15,6 +15,7 @@
     system/users.nix
     system/ssh.nix
     system/gaming.nix
+    system/ipv6-mostly.nix
     system/nix.nix
     system/zfs.nix
 

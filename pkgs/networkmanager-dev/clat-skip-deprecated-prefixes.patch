@@ -1,0 +1,14 @@
+--- a/src/core/nm-l3cfg.c	2026-06-13 01:43:36.576149959 +0200
++++ b/src/core/nm-l3cfg.c	2026-06-13 01:43:46.979332451 +0200
+@@ -4261,6 +4261,11 @@
+              * draft-ietf-v6ops-claton-14 Section 7 */
+             nm_l3_config_data_iter_ip6_address_for_each (&iter, l3cd, &ip6_entry) {
+                 if (ip6_entry->addr_source == NM_IP_CONFIG_SOURCE_NDISC && ip6_entry->plen == 64) {
++                    /* RFC 6724 rule 3: avoid deprecated addresses. Skip prefixes
++                     * advertised with a zero preferred lifetime, they are being
++                     * phased out and must not be used for new communication. */
++                    if (ip6_entry->lifetime != 0 && ip6_entry->preferred == 0)
++                        continue;
+                     if (_clat_prefix_is_better(best_prefix, ip6_entry, &pref64))
+                         best_prefix = ip6_entry;
+                 }

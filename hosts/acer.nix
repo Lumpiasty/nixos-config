@@ -89,6 +89,7 @@ rec {
     laptop = true;
     gaming = true;
     enableTailscale = true;
+    ipv6Mostly = true;
   };
 
   virtualisation.vmVariant = {
@@ -157,6 +158,8 @@ rec {
       };
     };
   };
+
+  programs.wireshark.enable = true;
 
 
   # This value determines the NixOS release from which the default
