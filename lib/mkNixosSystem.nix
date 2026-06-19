@@ -13,6 +13,7 @@
   nix-skills,
   nixpkgs-linuxeol,
   bun2nix,
+  nix-cachyos-kernel,
   ...
 }:
 hardwareConfig: hostConfig:
@@ -32,6 +33,7 @@ nixpkgs.lib.nixosSystem {
         claude-code.overlays.default
         acer-wmi-ext.overlays.default
         nix-skills.overlays.default
+        nix-cachyos-kernel.overlays.pinned
       ] ++ (import ../overlays/pkgs.nix { inherit bun2nix; });
       nix.settings = {
         substituters = [ "https://claude-code.cachix.org" ];

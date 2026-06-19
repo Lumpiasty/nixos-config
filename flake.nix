@@ -46,6 +46,7 @@
       url = "github:sudosubin/nix-skills";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel";
     bun2nix = {
       url = "github:nix-community/bun2nix";
       inputs.nixpkgs.follows = "nixpkgs";

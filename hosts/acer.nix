@@ -1,4 +1,4 @@
-{ lib, pkgs, nixpkgs-linuxeol, ... }:
+{ config, lib, pkgs, nixpkgs-linuxeol, ... }:
 
 rec {
   # Identity
@@ -23,8 +23,8 @@ rec {
 
   # Kernel
   # boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "sd_mod" "rtsx_pci_sdmmc" ];
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_7_0;
-  boot.zfs.package = pkgs.zfs_2_4;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.zfs.package = config.boot.kernelPackages.zfs_cachyos;
 
   # Swap
   swapDevices = [
