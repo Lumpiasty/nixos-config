@@ -94,15 +94,23 @@
       dua
     ];
 
-    # Inject the opencode-claude-auth plugin into the user's opencode.json without
-    # overwriting it — replaces any stale store path for this plugin and adds if absent.
-    home.activation.opencodeClaudeAuth = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    # Inject opencode auth plugins into the user's opencode.json without
+    # overwriting it — replaces any stale store path for each plugin and adds if absent.
+    # NOTE: opencode-antigravity-auth authenticates against Google's Antigravity
+    # backend (where consumer AI Pro/Ultra quota moved after the June 18 2026
+    # Gemini CLI/Code Assist OAuth shutdown). Using it violates Google's ToS and
+    # may get the Google account banned — accepted risk, see the plugin README.
+    home.activation.opencodePlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
       cfg="$HOME/.config/opencode/opencode.json"
       mkdir -p "$(dirname "$cfg")"
       [ -f "$cfg" ] || echo '{}' > "$cfg"
       tmp=$(mktemp)
-      ${pkgs.jq}/bin/jq --arg path "file://${pkgs.opencode-claude-auth}" '
-        .plugin = ((.plugin // []) | map(select(test("opencode-claude-auth") | not)) + [$path])
+      ${pkgs.jq}/bin/jq \
+        --arg claude "file://${pkgs.opencode-claude-auth}" \
+        --arg antigravity "file://${pkgs.opencode-antigravity-auth}" '
+        .plugin = ((.plugin // [])
+          | map(select((test("opencode-claude-auth") or test("opencode-gemini-auth") or test("opencode-antigravity-auth")) | not))
+          + [$claude, $antigravity])
       ' "$cfg" > "$tmp" && mv "$tmp" "$cfg"
     '';
 
