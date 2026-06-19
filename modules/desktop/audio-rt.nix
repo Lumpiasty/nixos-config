@@ -139,10 +139,10 @@ in
         { domain = "@audio"; type = "-"; item = "memlock"; value = "unlimited"; }
         { domain = "@audio"; type = "-"; item = "nice";    value = "-20"; }
       ];
-      systemd.user.extraConfig = ''
-        DefaultLimitRTPRIO=95
-        DefaultLimitMEMLOCK=infinity
-      '';
+      systemd.user.settings.Manager = {
+        DefaultLimitRTPRIO = 95;
+        DefaultLimitMEMLOCK = "infinity";
+      };
     })
 
     # --- CPU partitioning (cgroup-based) ------------------------------------
@@ -159,9 +159,9 @@ in
     #     so cores get clamped at minimum frequency.
     #   - No rcu_nocbs= : microsecond-scale jitter is irrelevant at 21ms quantum.
     (lib.mkIf (cfg.enable && cfg.cpuPartitioning) {
-      systemd.user.extraConfig = ''
-        CPUAffinity=${cfg.nonAudioCpus}
-      '';
+      systemd.user.settings.Manager = {
+        CPUAffinity = cfg.nonAudioCpus;
+      };
       systemd.settings.Manager.CPUAffinity = cfg.nonAudioCpus;
 
       # Delegate the cpuset controller to user managers so user-level slices
