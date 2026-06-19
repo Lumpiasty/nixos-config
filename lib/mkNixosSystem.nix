@@ -40,8 +40,14 @@ nixpkgs.lib.nixosSystem {
         nix-cachyos-kernel.overlays.pinned
       ] ++ (import ../overlays/pkgs.nix { inherit bun2nix; });
       nix.settings = {
-        substituters = [ "https://claude-code.cachix.org" ];
-        trusted-public-keys = [ "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk=" ];
+        substituters = [ 
+          "https://claude-code.cachix.org" 
+          "https://attic.xuyh0120.win/lantian"
+        ];
+        trusted-public-keys = [ 
+          "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk=" 
+          "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+        ];
       };
     }
     lanzaboote.nixosModules.lanzaboote
