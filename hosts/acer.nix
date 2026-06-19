@@ -71,7 +71,11 @@ rec {
     amdCpu = true;
     noMitigations = false;
     enablePulseaudio = true;
-    audioRt.enable = true;
+    audioRt = {
+      enable = true;
+      cpuPartitioning = false;
+      performanceGovernor = false;
+    };
     sshd = true;
     users.user = true;
     # users.drugi = true;

@@ -7,7 +7,5 @@
   nixpkgs.config.permittedInsecurePackages = [
     # Ventoy has some blobs making it insecure
     "ventoy-qt5-1.1.12"
-    # Temporary workaround
-    "librewolf-unwrapped-151.0.2-1" "librewolf-151.0.2-1"
   ];
 }
