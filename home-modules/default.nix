@@ -7,5 +7,6 @@
     ./dev.nix
     ./gaming.nix
     ./plasma.nix
+    ./fhsBash.nix
   ];
 }
