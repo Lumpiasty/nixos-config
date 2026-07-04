@@ -34,10 +34,13 @@
 
     programs.vscodium = {
       enable = true;
-      profiles.default.extensions = with pkgs; [
-        vscode-extensions.mkhl.direnv
-        vscode-extensions.jnoortheen.nix-ide
-        vscode-extensions.hashicorp.hcl
+      profiles.default.extensions = with pkgs.vscode-extensions; [
+        mkhl.direnv
+        jnoortheen.nix-ide
+        hashicorp.hcl
+        ms-python.python
+        ms-python.vscode-python-envs
+        ms-python.debugpy
       ];
       argvSettings = {
         # https://github.com/microsoft/vscode/issues/262065#issue-3328712020
