@@ -120,6 +120,7 @@
     # users.drugi = true;
     enableTailscale = true;
     scx = true;
+    ipv6Mostly = true;
   };
 
   virtualisation.vmVariant = {
