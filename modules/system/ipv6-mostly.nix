@@ -14,14 +14,12 @@
     networking.networkmanager.package = pkgs.networkmanager-clat;
 
     # Drop a conf.d snippet that sets connection-level defaults.
-    # NM reads /etc/NetworkManager/conf.d/*.conf in addition to NetworkManager.conf.
-    environment.etc."NetworkManager/conf.d/99-ipv6-mostly.conf".text = ''
+    networking.networkmanager.settings.connection = {
       # IPv6-mostly: automatically enable CLAT (464XLAT) and DHCPv4 option 108
       # when the network advertises PREF64 and/or option 108 (RFC 8925).
       # On networks without these, behaviour is unchanged (native IPv4 proceeds).
-      [connection-defaults]
-      ipv4.clat=auto
-      ipv4.dhcp-ipv6-only-preferred=auto
-    '';
+      "ipv4.clat" = "auto";
+      "ipv4.dhcp-ipv6-only-preferred" = "auto";
+    };
   };
 }
