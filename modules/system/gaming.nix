@@ -1,6 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 {
   options.lumpiasty.gaming = lib.mkEnableOption "Enable options specific to gaming computers";
+  options.lumpiasty.scx = lib.mkEnableOption "Enable sched-ext";
 
   config = lib.mkIf config.lumpiasty.gaming {
     # https://github.com/NixOS/nixpkgs/blob/10e687235226880ed5e9f33f1ffa71fe60f2638a/nixos/modules/programs/steam.nix
@@ -32,7 +33,7 @@
     };
 
     services.scx = {
-      enable = true;
+      enable = config.lumpiasty.scx;
       scheduler = "scx_cosmos";
     };
   };

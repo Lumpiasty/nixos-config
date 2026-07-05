@@ -94,6 +94,7 @@ rec {
     gaming = true;
     enableTailscale = true;
     ipv6Mostly = true;
+    scx = false;
   };
 
   virtualisation.vmVariant = {
