@@ -57,6 +57,7 @@
   buildPackages,
   nixosTests,
   systemd,
+  slang,
   udev,
   udevCheckHook,
   withSystemd ? lib.meta.availableOn stdenv.hostPlatform systemd,
@@ -68,12 +69,12 @@ let
 in
 stdenv.mkDerivation (finalAttrs: {
   pname = "networkmanager";
-  version = "1.57.4-dev";
+  version = "1.58-rc1";
 
   src = fetchurl {
     # Use the stable release tarball (not the git archive) — GitLab git archives are not content-stable.
     url = "https://gitlab.freedesktop.org/api/v4/projects/411/packages/generic/NetworkManager/${finalAttrs.version}/NetworkManager-${finalAttrs.version}.tar.xz";
-    hash = "sha256-ThYPO/0YsmFSc2Qol1ZAoQb1qdtjPRg+rvxpUzKe0sA=";
+    hash = "sha256-k0Oi2/vswKLI6NS65J2rP8iYJlB206JJHGOgO26LOt4=";
   };
 
   outputs = [
@@ -154,6 +155,7 @@ stdenv.mkDerivation (finalAttrs: {
     jansson
     dbus
     libbpf
+    slang
   ]
   ++ lib.optionals withNbft [
     libnvme
@@ -229,7 +231,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   meta = {
     homepage = "https://networkmanager.dev";
-    description = "Network configuration and management tool (1.57.4-dev with CLAT/ipv6-mostly support)";
+    description = "Network configuration and management tool (1.58-rc1 with CLAT/ipv6-mostly support)";
     license = lib.licenses.gpl2Plus;
     maintainers = with lib.maintainers; [ obadz ];
     teams = [ lib.teams.freedesktop ];
