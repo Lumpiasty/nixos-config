@@ -61,6 +61,9 @@
         # Exclude calligra due to build failure
         (builtins.filter (pkg: pkg.pname != "calligra"))
 
+        # Exclude kdev-python due to build failure
+        (builtins.filter (pkg: pkg.pname != "kdev-python"))
+
         # Exclude plasma-mobile
         (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
       ]) ++ [
