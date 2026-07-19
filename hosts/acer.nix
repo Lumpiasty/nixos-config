@@ -75,6 +75,7 @@ rec {
       enable = true;
       cpuPartitioning = false;
       performanceGovernor = false;
+      optimisedBinaries = false;
     };
     sshd = true;
     users.user = true;
