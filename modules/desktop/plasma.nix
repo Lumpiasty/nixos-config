@@ -58,6 +58,9 @@
         # Exclude audiotube due to build failure
         (builtins.filter (pkg: pkg.pname != "audiotube"))
 
+        # Exclude calligra due to build failure
+        (builtins.filter (pkg: pkg.pname != "calligra"))
+
         # Exclude plasma-mobile
         (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
       ]) ++ [
