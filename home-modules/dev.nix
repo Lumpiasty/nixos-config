@@ -165,7 +165,7 @@
           ''
       );
       skills = with pkgs.skills; {
-        caveman = majiayu000."claude-skill-registry".caveman + "/";
+        # caveman = majiayu000."claude-skill-registry".caveman + "/";
       };
     };
   };
