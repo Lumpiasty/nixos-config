@@ -18,5 +18,16 @@
       (final.lib.versionOlder prev.networkmanager.version "1.58")
       "nixpkgs now ships NetworkManager ${prev.networkmanager.version} >= 1.58 — remove the override in overlays/pkgs.nix and pkgs/networkmanager-dev/";
       prev.callPackage ../pkgs/networkmanager-dev/package.nix { };
+    # Build failure 20.07.2026
+    # https://github.com/NixOS/nixpkgs/issues/543510
+    python3Packages = prev.python3Packages.overrideScope (sfinal: sprev: {
+      patool = sprev.patool.overrideAttrs (old: {
+        disabledTests = old.disabledTests ++ [
+          "test_tar"
+          "test_pytarfile"
+          "test_mime"
+        ];
+      });
+    });
   })
 ]
