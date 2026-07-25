@@ -69,7 +69,7 @@ in
     users.users.user = lib.mkMerge [
       (mkUser cfg.user ../../users/user/config.nix)
       {
-        extraGroups = lib.mkIf config.lumpiasty.pc [ "docker" "libvirtd" ];
+        extraGroups = lib.mkIf config.lumpiasty.pc [ "docker" "libvirtd" "cdrom" ];
       }
     ];
     home-manager.users.user = mkHome cfg.user ../../users/user/home.nix;
