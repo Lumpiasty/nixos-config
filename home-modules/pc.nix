@@ -16,7 +16,7 @@
       inkscape
       qtpass
       signal-desktop
-      transmission_4-qt6
+      transmission_4-qt
       thunderbird
       pwgen
       siyuan
