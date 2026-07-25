@@ -33,40 +33,7 @@
 
     # Use wayland in electron apps
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
-    environment.systemPackages =
-      (lib.pipe (builtins.attrValues pkgs.kdePackages.gear) [
-        (builtins.filter (pkg: !pkg.meta.broken))
-        # Exclude neochat and itinerary due to known vulnerabilities
-        (builtins.filter (pkg: pkg.pname != "neochat"))
-        (builtins.filter (pkg: pkg.pname != "itinerary"))
-
-        # Exclude angelfish due to build failure
-        (builtins.filter (pkg: pkg.pname != "angelfish"))
-
-        # Exclude step due to build failure
-        (builtins.filter (pkg: pkg.pname != "step"))
-
-        # Exclude plasma-vault due to build failure
-        (builtins.filter (pkg: pkg.pname != "plasma-vault"))
-
-        # Exclude kalzium due to build failure
-        (builtins.filter (pkg: pkg.pname != "kalzium"))
-
-        # Exclude audiocd-kio due to build failure
-        (builtins.filter (pkg: pkg.pname != "audiocd-kio"))
-
-        # Exclude audiotube due to build failure
-        (builtins.filter (pkg: pkg.pname != "audiotube"))
-
-        # Exclude calligra due to build failure
-        (builtins.filter (pkg: pkg.pname != "calligra"))
-
-        # Exclude kdev-python due to build failure
-        (builtins.filter (pkg: pkg.pname != "kdev-python"))
-
-        # Exclude plasma-mobile
-        (builtins.filter (pkg: pkg.pname != "plasma-mobile"))
-      ]) ++ [
+    environment.systemPackages = [
         # Printing support in Plasma settings
         pkgs.system-config-printer
       ];
