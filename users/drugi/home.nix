@@ -18,8 +18,6 @@
     kubernetes-helm
     xonsh
     gnumake
-    python312
-    python312Packages.python-lsp-server
     nil
     docker
     docker-buildx
