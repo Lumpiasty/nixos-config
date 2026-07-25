@@ -10,7 +10,6 @@
   nix-sweep,
   peerix,
   acer-wmi-ext,
-  ntfsplus,
   nix-skills,
   nixpkgs-linuxeol,
   bun2nix,
@@ -26,7 +25,6 @@ nixpkgs.lib.nixosSystem {
     inherit plasma-manager;
     inherit acer-wmi-ext;
     inherit nixpkgs-linuxeol;
-    inherit ntfsplus;
   };
   modules = [
     {

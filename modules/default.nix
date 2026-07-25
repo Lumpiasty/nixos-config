@@ -7,7 +7,6 @@
     hardware/no-mitigations.nix
     hardware/acer-undervolt.nix
 
-    system/ntfsplus.nix
     system/roles.nix
     system/nixpkgs.nix
     system/location.nix

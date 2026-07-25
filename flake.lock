@@ -330,22 +330,6 @@
         "type": "github"
       }
     },
-    "linux-ntfs": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1784514524,
-        "narHash": "sha256-opG3HF0XoDBmZCYbG4MD0+Jt7rFL/VCEdBH74RouKPs=",
-        "owner": "namjaejeon",
-        "repo": "linux-ntfs",
-        "rev": "ca149db6b901a0d44cdd88e54047e0cd422ca70d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "namjaejeon",
-        "repo": "linux-ntfs",
-        "type": "github"
-      }
-    },
     "nix-cachyos-kernel": {
       "inputs": {
         "cachyos-kernel": "cachyos-kernel",
@@ -542,27 +526,6 @@
         "type": "indirect"
       }
     },
-    "ntfsplus": {
-      "inputs": {
-        "linux-ntfs": "linux-ntfs",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1774317576,
-        "narHash": "sha256-HSDFaDLvfS/NqJlXbHh9135DEpqH6JrNuWqbu3YPcTg=",
-        "owner": "cmspam",
-        "repo": "ntfsplus-flake",
-        "rev": "e22d1bcbac31b4e6484d32c503396e8184650215",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cmspam",
-        "repo": "ntfsplus-flake",
-        "type": "github"
-      }
-    },
     "peerix": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -644,7 +607,6 @@
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-2605": "nixpkgs-2605",
         "nixpkgs-linuxeol": "nixpkgs-linuxeol",
-        "ntfsplus": "ntfsplus",
         "peerix": "peerix",
         "plasma-manager": "plasma-manager"
       }

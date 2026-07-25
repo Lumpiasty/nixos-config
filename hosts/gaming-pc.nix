@@ -102,8 +102,6 @@
         };
     };
 
-  # Use ntfs-plus instead driver
-  services.ntfsplus.enable = true;
   # Force disable ntfs-3g driver
   boot.supportedFilesystems.ntfs = lib.mkForce false;
 
