@@ -84,7 +84,6 @@
       nodejs_24
       codex
       claude-code
-      oh-my-pi
       winbox4
       amdgpu_top
       dua

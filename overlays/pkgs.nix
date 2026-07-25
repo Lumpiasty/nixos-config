@@ -3,7 +3,6 @@
 [
   bun2nix.overlays.default
   (final: prev: {
-    oh-my-pi = final.callPackage ../pkgs/oh-my-pi { inherit (final) bun2nix; };
     opencode-claude-auth = prev.callPackage ../pkgs/opencode-claude-auth { };
     opencode-antigravity-auth = final.callPackage ../pkgs/opencode-antigravity-auth { inherit (final) bun2nix; };
     # NetworkManager 1.57.4-dev: adds ipv4.clat (CLAT/464XLAT) needed for IPv6-mostly.
