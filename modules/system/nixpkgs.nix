@@ -6,6 +6,6 @@
 
   nixpkgs.config.permittedInsecurePackages = [
     # Ventoy has some blobs making it insecure
-    "ventoy-qt5-1.1.12"
+    "ventoy-qt5-${pkgs.ventoy.version}"
   ];
 }
