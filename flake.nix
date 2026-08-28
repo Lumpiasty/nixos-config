@@ -58,9 +58,13 @@
       url = "github:nix-community/bun2nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
-  outputs = { self, nixos-hardware, ... }@inputs:
+  outputs = { self, nixos-hardware, nix-darwin, ... }@inputs:
     {
       nixosConfigurations = 
         let
@@ -71,5 +75,8 @@
             acer = mkNixosSystem {} hosts/acer.nix;
             gaming-pc = mkNixosSystem {} hosts/gaming-pc.nix;
           };
+      darwinConfigurations."MacBook-Pro-Macbook" = nix-darwin.lib.darwinSystem {
+        modules = [ ((import ./configuration.nix) self) ];
+      };
     };
 }
