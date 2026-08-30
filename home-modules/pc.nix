@@ -10,7 +10,6 @@
       spotify
       pass-wayland
       teamspeak6-client
-      easyeffects
       libreoffice-qt6-fresh
       vlc
       inkscape
