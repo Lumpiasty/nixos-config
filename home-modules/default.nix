@@ -1,4 +1,4 @@
-{ flake, pkgs, lib, ... }:
+{ flake, pkgs, lib, osConfig ? null, ... }:
 
 {
   imports = [
@@ -6,7 +6,8 @@
     ./pc.nix
     ./dev.nix
     ./gaming.nix
-    ./plasma.nix
     ./fhsBash.nix
+  ] ++ lib.optionals (osConfig.lumpiasty.enablePlasma) [
+    ./plasma.nix
   ];
 }
