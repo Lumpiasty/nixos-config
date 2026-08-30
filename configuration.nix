@@ -26,4 +26,6 @@ self: { pkgs, ... }: {
     users.users.macbookpro = {
         home = "/Users/macbookpro";
     };
+
+    lumpiasty.pc = true;
 }
