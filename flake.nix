@@ -76,7 +76,16 @@
             gaming-pc = mkNixosSystem {} hosts/gaming-pc.nix;
           };
       darwinConfigurations."MacBook-Pro-Macbook" = nix-darwin.lib.darwinSystem {
-        modules = [ ((import ./configuration.nix) self) ];
+        modules = [
+          ((import ./configuration.nix) self)
+          inputs.home-manager.darwinModules.home-manager
+          {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.verbose = true;
+              home-manager.users.macbookpro = ./home-modules;
+          }
+        ];
       };
     };
 }
