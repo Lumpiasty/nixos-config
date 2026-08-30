@@ -1,8 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  options.lumpiasty.enableGnome = lib.mkEnableOption "Enable Gnome desktop";
-
   config = lib.mkIf config.lumpiasty.enableGnome {
     # Enable the X11 windowing system.
     services.xserver.enable = true;

@@ -6,8 +6,6 @@
 # defaults, mirroring the Fedora 45 change:
 # https://fedoraproject.org/wiki/Changes/IPv6-Mostly_Support_In_NetworkManager
 {
-  options.lumpiasty.ipv6Mostly = lib.mkEnableOption "Enable IPv6-mostly (RFC 8925 + CLAT/464XLAT) support in NetworkManager";
-
   config = lib.mkIf config.lumpiasty.ipv6Mostly {
     # Use the patched NM build with CLAT support, without replacing pkgs.networkmanager
     # globally (which would cascade rebuilds across the entire system closure).

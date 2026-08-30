@@ -18,8 +18,6 @@
 # persist values across boot / resume.
 
 {
-  options.lumpiasty.acerUndervolt = lib.mkEnableOption "ryzenadj + ryzen_smu tooling for Acer 8845HS";
-
   config = lib.mkIf config.lumpiasty.acerUndervolt {
     boot.kernelModules = [ "ryzen_smu" ];
     boot.extraModulePackages = [ config.boot.kernelPackages.ryzen-smu ];

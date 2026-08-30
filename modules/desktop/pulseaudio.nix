@@ -2,8 +2,6 @@
 
 {
 
-  options.lumpiasty.enablePulseaudio = lib.mkEnableOption "Enable Plasma6 desktop";
-
   config = lib.mkIf config.lumpiasty.enablePulseaudio {
     # Enable sound with pipewire. Dont forget after 24.05
     services.pulseaudio.enable = false;

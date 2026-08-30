@@ -10,12 +10,6 @@ let
   mkUser = import ../../lib/mkUser.nix { inherit lib; };
 in
 {
-  options.lumpiasty.users = {
-    user = lib.mkEnableOption "Create user \"user\"";
-    drugi = lib.mkEnableOption "Create user \"drugi\"";
-  };
-
-
   config = {
     # Install system-wide docker because rootless causes issues with binfmt
     virtualisation.docker.enable = config.lumpiasty.pc;

@@ -38,72 +38,7 @@ let
 
 in
 
-{
-  options.lumpiasty.audioRt = {
-    enable = lib.mkEnableOption "Audio RT scheduling and CPU isolation";
-
-    audioCpus = lib.mkOption {
-      type = lib.types.str;
-      default = "12-15";
-      description = "CPU list reserved for audio services (systemd cpuset syntax).";
-    };
-
-    nonAudioCpus = lib.mkOption {
-      type = lib.types.str;
-      default = "0-11";
-      description = "CPU list for everything else.";
-    };
-
-    # ------ Individual optimization toggles ------
-
-    cpuPartitioning = lib.mkOption {
-      type = lib.types.bool;
-      default = cfg.enable;
-      description = ''
-        Cgroup-based CPU partitioning via dedicated audio.slice and
-        restricted app/session/background slices.
-      '';
-    };
-
-    rtLimits = lib.mkOption {
-      type = lib.types.bool;
-      default = cfg.enable;
-      description = ''
-        Raise rlimits (RTPRIO=95, MEMLOCK=infinity) for the audio group
-        so PipeWire's module-rt can set SCHED_FIFO 88 directly instead
-        of going through RTKit's priority-10 ceiling.
-      '';
-    };
-
-    performanceGovernor = lib.mkOption {
-      type = lib.types.bool;
-      default = cfg.enable;
-      description = ''
-        Keep cpufreq governor `performance` on the audio cores so they
-        stay boosted regardless of measured utilization.
-      '';
-    };
-
-    ananicy = lib.mkOption {
-      type = lib.types.bool;
-      default = cfg.enable;
-      description = ''
-        Run ananicy-cpp with a rule that pins easyeffects to nice -12 so
-        its non-RT DSP threads get scheduler preference under load.
-      '';
-    };
-
-    optimisedBinaries = lib.mkOption {
-      type = lib.types.bool;
-      default = cfg.enable;
-      description = ''
-        Rebuild easyeffects and its DSP dependencies with -march=znver4 -O3
-        (and LTO for cmake builds, target-cpu for rust builds).
-      '';
-    };
-  };
-
-  config = lib.mkMerge [
+{ config = lib.mkMerge [
 
     # --- Optimised binary builds ---------------------------------------------
     (lib.mkIf (cfg.enable && cfg.optimisedBinaries) {

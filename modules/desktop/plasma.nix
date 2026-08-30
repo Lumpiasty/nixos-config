@@ -1,8 +1,6 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  options.lumpiasty.enablePlasma = lib.mkEnableOption "Enable Plasma6 desktop";
-
   config = lib.mkIf config.lumpiasty.enablePlasma {
     # Enable the X11 windowing system.
     services.xserver.enable = true;
