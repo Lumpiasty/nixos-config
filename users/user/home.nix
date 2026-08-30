@@ -1,7 +1,7 @@
 { config, pkgs, osConfig, ... }:
 
 {
-  home.username = "user";
+  # home.username = "user";
 
   lumpiastyHome = {
     gpg = osConfig.lumpiasty.pc;
