@@ -83,7 +83,12 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.verbose = true;
-              home-manager.users.macbookpro = ./home-modules;
+              home-manager.users.macbookpro = { ... }: {
+                imports = [
+                  ./home-modules
+                  ./users/user/home.nix
+                ];
+              };
           }
         ];
       };
