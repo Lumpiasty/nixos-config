@@ -7,6 +7,7 @@
     ./dev.nix
     ./gaming.nix
     ./fhsBash.nix
+    ./linux.nix
   ] ++ lib.optionals (osConfig.lumpiasty.enablePlasma) [
     ./plasma.nix
   ];

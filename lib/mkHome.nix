@@ -9,5 +9,6 @@ lib.mkIf condition (
       ../home-modules
       home
     ];
+    lumpiastyHome.linux = true;
   }
 )
