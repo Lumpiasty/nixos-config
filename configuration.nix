@@ -28,4 +28,7 @@ self: { pkgs, ... }: {
     };
 
     lumpiasty.pc = true;
+
+    # Allow unfree packages
+    nixpkgs.config.allowUnfree = true;
 }

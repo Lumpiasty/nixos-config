@@ -9,5 +9,21 @@
       # which has AllowedCPUs=<audioCpus> — pins all DSP work to the reserved cores.
       Slice = "audio.slice";
     };
+
+    programs.chromium.enable = true;
+    programs.chromium.package = pkgs.ungoogled-chromium;
+
+    home.packages = with pkgs; (lib.optionals config.lumpiastyHome.dev [
+      wl-clipboard
+      traceroute
+      amdgpu_top
+    ] ++ lib.optionals config.lumpiastyHome.pc [
+      pass-wayland
+      libreoffice-qt-stable
+      vlc
+      gimp
+      ventoy-full-qt
+      teamspeak6-client
+    ]);
   };
 }

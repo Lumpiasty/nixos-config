@@ -88,6 +88,10 @@
                   ./users/user/home.nix
                 ];
               };
+              nixpkgs.overlays = [
+                inputs.claude-code.overlays.default
+                inputs.nix-skills.overlays.default
+              ] ++ (import ./overlays/pkgs.nix { bun2nix = inputs.bun2nix; });
           }
         ];
       };

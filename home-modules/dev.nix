@@ -73,17 +73,14 @@
       docker
       docker-buildx
       proton-vpn
-      wl-clipboard
       devenv
       dig
       whois
       mtr
-      traceroute
       nodejs_24
       codex
       claude-code
       winbox4
-      amdgpu_top
       dua
     ];
 

@@ -8,7 +8,7 @@
     enablePcApps = osConfig.lumpiasty.pc;
     dev = osConfig.lumpiasty.pc;
     gaming = osConfig.lumpiasty.gaming;
-    fhs = osConfig.lumpiasty.pc;
+    fhs = osConfig.lumpiasty.pc && config.lumpiastyHome.linux;
   };
 
   home.stateVersion = "24.05";

@@ -8,10 +8,6 @@
       vesktop
       # Manual update, not yet in nixpkgs as for now
       spotify
-      pass-wayland
-      teamspeak6-client
-      libreoffice-qt6-fresh
-      vlc
       inkscape
       qtpass
       signal-desktop
@@ -19,13 +15,8 @@
       thunderbird
       pwgen
       siyuan
-      gimp
-      ventoy-full-qt
     ];
     programs.librewolf.enable = true;
-
-    programs.chromium.enable = true;
-    programs.chromium.package = pkgs.ungoogled-chromium;
 
     # services.flatpak.remotes = [{
     #   name = "flathub"; location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
