@@ -61,6 +61,10 @@
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    homebrew = {
+      url = "github:koalalorenzo/home-manager-brew";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   
   outputs = { self, nixos-hardware, nix-darwin, ... }@inputs:
@@ -86,8 +90,10 @@
                 imports = [
                   ./home-modules
                   ./users/user/home.nix
+                  inputs.homebrew.homeManagerModules.default
                 ];
                 lumpiastyHome.macos = true;
+                lumpiastyHome.brew = true;
               };
               nixpkgs.overlays = [
                 inputs.claude-code.overlays.default
