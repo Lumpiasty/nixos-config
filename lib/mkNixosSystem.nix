@@ -1,7 +1,6 @@
 {
   self,
   nixpkgs,
-  nixpkgs-2605,
   home-manager,
   nix-flatpak,
   plasma-manager,
@@ -29,9 +28,6 @@ nixpkgs.lib.nixosSystem {
   modules = [
     {
       nixpkgs.overlays = [
-        (final: prev: {
-          librewolf = nixpkgs-2605.legacyPackages.${prev.system}.librewolf;
-        })
         claude-code.overlays.default
         acer-wmi-ext.overlays.default
         nix-skills.overlays.default
