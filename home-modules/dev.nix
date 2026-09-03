@@ -117,7 +117,7 @@
         User = "root";
         ControlMaster = "auto";
         ControlPersist = "3600";
-        ControlPath = "/run/user/%i/ssh-socket-%r@%h:%p";
+        ControlPath = lib.mkIf config.lumpiastyHome.linux "/run/user/%i/ssh-socket-%r@%h:%p";
         ServerAliveInterval = 20;
       };
 
