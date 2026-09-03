@@ -87,6 +87,7 @@
                   ./home-modules
                   ./users/user/home.nix
                 ];
+                lumpiastyHome.macos = true;
               };
               nixpkgs.overlays = [
                 inputs.claude-code.overlays.default
