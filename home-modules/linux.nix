@@ -17,7 +17,7 @@
       wl-clipboard
       traceroute
       amdgpu_top
-    ] ++ lib.optionals config.lumpiastyHome.pc [
+    ] ++ lib.optionals config.lumpiastyHome.linux [
       pass-wayland
       libreoffice-qt-stable
       vlc
