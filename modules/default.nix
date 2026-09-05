@@ -18,6 +18,7 @@
     system/ipv6-mostly.nix
     system/nix.nix
     system/zfs.nix
+    system/ntfsplus.nix
 
     desktop/plasma.nix
     desktop/touchpad.nix
