@@ -80,7 +80,7 @@
           };
       darwinConfigurations."MacBook-Pro-Macbook" = nix-darwin.lib.darwinSystem {
         modules = [
-          ((import ./configuration.nix) self)
+          ((import ./hosts/macbook.nix) self)
           inputs.home-manager.darwinModules.home-manager
           {
               home-manager.useGlobalPkgs = true;
