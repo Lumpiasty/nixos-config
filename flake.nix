@@ -93,7 +93,6 @@
                   inputs.homebrew.homeManagerModules.default
                 ];
                 lumpiastyHome.macos = true;
-                lumpiastyHome.brew = true;
               };
               nixpkgs.overlays = [
                 inputs.claude-code.overlays.default
