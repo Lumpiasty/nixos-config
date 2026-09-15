@@ -14,13 +14,13 @@ in
     # Install system-wide docker because rootless causes issues with binfmt
     virtualisation.docker.enable = config.lumpiasty.pc;
 
-    # Binfmt for aarch64 emulation
-    boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-    boot.binfmt.preferStaticEmulators = true;
-    # Pass the binary to the interpreter as an open file descriptor, instead of a path.
-    # Fixes issue inside containers.
-    boot.binfmt.registrations.aarch64-linux.openBinary = true;
-    boot.binfmt.registrations.aarch64-linux.fixBinary = true;
+    # # Binfmt for aarch64 emulation
+    # boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
+    # boot.binfmt.preferStaticEmulators = true;
+    # # Pass the binary to the interpreter as an open file descriptor, instead of a path.
+    # # Fixes issue inside containers.
+    # boot.binfmt.registrations.aarch64-linux.openBinary = true;
+    # boot.binfmt.registrations.aarch64-linux.fixBinary = true;
 
     # Libvirt
     virtualisation.libvirtd = lib.mkIf config.lumpiasty.pc {
