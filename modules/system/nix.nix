@@ -23,6 +23,8 @@ in
     keepMin = if keepGenerations != null then keepGenerations else 10;
 
     gc = true; # Run GC afterwards
+    gcBigger = 150; # Run GC only if store is bigger than 150 GiB
+    gcModest = true; # Stop gc once store meets quota
   };
 
   services.peerix = {
