@@ -24,5 +24,6 @@
     desktop/pulseaudio.nix
     desktop/audio-rt.nix
     desktop/tailscale.nix
+    desktop/headsetcontrol.nix
   ];
 }
