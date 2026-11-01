@@ -4,11 +4,11 @@
   nixConfig = {
     extra-substituters = [
       "https://claude-code.cachix.org"
-      "https://attic.xuyh0120.win/lantian"
+      "https://cache.lantian.pub/lantian"
     ];
     extra-trusted-public-keys = [
       "claude-code.cachix.org-1:YeXf2aNu7UTX8Vwrze0za1WEDS+4DuI2kVeWEE4fsRk="
-      "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      "lantian:WVGO7vsRMSEN+h7Lp7kv6SAmrkEXgUGbbXm7jMDjBuQ="
     ];
   };
 
