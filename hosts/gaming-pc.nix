@@ -137,6 +137,8 @@
   # Local LLaMA.cpp server
   networking.firewall.allowedTCPPorts = [ 8080 ];
 
+  services.nix-sweep.gcBigger = lib.mkForce 50;
+
   # nixpkgs.hostPlatform = {
   #   system = "x86_64-linux";
   #   gcc.arch = "haswell";
