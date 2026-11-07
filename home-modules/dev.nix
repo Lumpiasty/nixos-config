@@ -90,19 +90,19 @@
     # backend (where consumer AI Pro/Ultra quota moved after the June 18 2026
     # Gemini CLI/Code Assist OAuth shutdown). Using it violates Google's ToS and
     # may get the Google account banned — accepted risk, see the plugin README.
-    home.activation.opencodePlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-      cfg="$HOME/.config/opencode/opencode.json"
-      mkdir -p "$(dirname "$cfg")"
-      [ -f "$cfg" ] || echo '{}' > "$cfg"
-      tmp=$(mktemp)
-      ${pkgs.jq}/bin/jq \
-        --arg claude "file://${pkgs.opencode-claude-auth}" \
-        --arg antigravity "file://${pkgs.opencode-antigravity-auth}" '
-        .plugin = ((.plugin // [])
-          | map(select((test("opencode-claude-auth") or test("opencode-gemini-auth") or test("opencode-antigravity-auth")) | not))
-          + [$claude, $antigravity])
-      ' "$cfg" > "$tmp" && mv "$tmp" "$cfg"
-    '';
+    # home.activation.opencodePlugins = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    #   cfg="$HOME/.config/opencode/opencode.json"
+    #   mkdir -p "$(dirname "$cfg")"
+    #   [ -f "$cfg" ] || echo '{}' > "$cfg"
+    #   tmp=$(mktemp)
+    #   ${pkgs.jq}/bin/jq \
+    #     --arg claude "file://${pkgs.opencode-claude-auth}" \
+    #     --arg antigravity "file://${pkgs.opencode-antigravity-auth}" '
+    #     .plugin = ((.plugin // [])
+    #       | map(select((test("opencode-claude-auth") or test("opencode-gemini-auth") or test("opencode-antigravity-auth")) | not))
+    #       + [$claude, $antigravity])
+    #   ' "$cfg" > "$tmp" && mv "$tmp" "$cfg"
+    # '';
 
     # SSH config
     programs.ssh = {
@@ -147,7 +147,7 @@
     );
 
     programs.opencode = {
-      enable = true;
+      # enable = true;
       package = (
         # Wrapping opencode to set the OPENCODE_ENABLE_EXA environment variable
         pkgs.runCommand "opencode" {
