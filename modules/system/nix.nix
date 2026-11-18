@@ -28,7 +28,7 @@ in
   };
 
   services.peerix = {
-    enable = true;
+    enable = false;
     
     # Use an empty string (not null) to use the modern unified app 
     # but with the internet tracker internally disabled.
