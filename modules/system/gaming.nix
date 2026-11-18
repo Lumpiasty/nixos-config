@@ -29,9 +29,9 @@
       };
     };
 
-    services.scx = {
+    services.scx-loader = {
       enable = config.lumpiasty.scx;
-      scheduler = "scx_cosmos";
+      config.default_sched = "scx_cosmos";
     };
   };
 }
